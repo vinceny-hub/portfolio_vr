@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <div class="container">
-    <nav class="navbar1">
+    <nav class="navbar1" v-on:click="buttonClick()">
      <h1>{{ msg }}</h1>
       <li class="">
       <router-link to="/" class="navbar-brand">Landing</router-link>
        </li>
        <li class="">
-      <router-link to="/home" class="navbar-brand">bezKoder</router-link>
+      <router-link to="/home" class="navbar-brand">Home</router-link>
        </li>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
@@ -21,6 +21,16 @@
         </li>
       </div>
     </nav>
+      <vue-flip active-click="" class="box-2">
+          <template v-slot:front class="front">
+            <div class="i1">Front</div>
+          </template>
+          <template v-slot:back class="back">
+            <span>
+             <div class="i2">back</div>
+            </span>
+          </template>
+        </vue-flip>
     <div class="boxX">
         <div class="box">
       <div class="box-inner">
@@ -33,17 +43,44 @@
       </div>
       </div>
     </div>
-    <div class="box-1"  v-on:click="flipCard()">
+     <vue-flip active-click="" width="100vw" height="8vw" v-on:click="buttonClick(1)" id="id" class="box-1" horizontal="true">
+          <template v-slot:front class="front">
+             <!-- <div class="title_bar">-->
+         <div class="title_container"> 
+              <div class="title_box"> 
+              <h1 class="title_name">Vincent Robert</h1>
+              <h2 class="sousTitre">Développeur Web</h2>
+              </div>
+         <!-- </div>-->
+             </div> 
+          </template>
+          <template v-slot:back class="back">
+                <!-- <div class="title_bar">-->
+         <div class="title_container"> 
+         <div class="reverse back">
+             <div class="title_box"> 
+                <h1 class="title_name">Vincent Robert</h1>
+           <h2 class="sousTitre">Développeur Web</h2>
+         <!-- </div>-->
+             </div>
+         </div> 
+         </div>
+          </template>
+        </vue-flip>
+    <!-- <div class="box-1"  v-on:click="flipCard()">
        <div class="title_bar">
          <div class="title_container">
            <h1 class="title_name">Vincent Robert</h1>
            <h2 class="sousTitre">Développeur Web</h2>
           </div>
         </div>
-    </div>
-    <div class="box-2">
+    </div> -->
+     
+  
+     
+    <!-- <div class="box-2">
       <div class="side_bar"></div>
-    </div>
+    </div> -->
     <div class="box-3">
       
       
@@ -81,12 +118,102 @@
 </template>
 
 <script>
+import VueFlip from 'vue-flip';
 export default {
   name: 'home',
   props: {
     msg: String
-  }
-};
+  },
+   components: {
+      'vue-flip': VueFlip
+    },
+     methods:{
+
+     
+
+ local(){
+     let valeur = 1
+                       
+             
+          //  let count = JSON.parse(localStorage.getItem('count'))
+           localStorage.setItem('count', valeur); 
+ },
+        
+        buttonClick() {
+          //  let valeur = 1
+           
+           let count = JSON.parse(localStorage.getItem('count'))
+          // //  localStorage.setItem('count', valeur); 
+          //  let valeur = count+1
+
+          if(count >=2){
+            let zero = 0
+            localStorage.setItem('count', zero); 
+          }
+          else{
+              let count = JSON.parse(localStorage.getItem('count'))
+          //  localStorage.setItem('count', valeur); 
+              let valeur = count+1
+              localStorage.setItem('count', valeur); 
+            
+          }
+        
+           
+
+           
+
+          //  localStorage.setItem('count', valeur); 
+
+          
+          
+          // let count = JSON.parse(localStorage.getItem('count'))
+          console.log(count)
+          // let increment = count + 1  
+          // console.log(increment)                      
+    // console.log(OP)
+    // let init = []
+    // let dataStr = JSON.stringify(data)
+    // data = JSON.parse(dataStr)
+    // if(count.length>0){ 
+    // let increment = count.length
+    // console.log(increment)
+    // }
+    // else{
+    //   count = 1
+    // }
+      // let valeur = 0        
+      // valeur+=increment;
+      // document.getElementById('id').value=valeur;
+
+      // console.log(valeur)
+       this.myFunction(count)
+      },
+
+
+      myFunction(count) {
+        // var color = ["#3b609b", "#9b3b3b", "#3b9b81", "#7da5a4"];
+        var color = ["red", "yellow", "darkblue",];
+      
+        
+          //   let count = 0
+          //   this.count = i+1
+          // console.log(count)
+              
+  // var rand = Math.floor(Math.random() * color.length);
+    document.getElementById('id').style.background = color[count];
+    console.log(count)
+     
+     }
+         },
+           mounted(){
+
+         
+ this.local()      },
+}
+
+
+ 
+
 </script>
 
 
@@ -124,6 +251,42 @@ export default {
   overflow: hidden;
   justify-content: space-around;
  }
+
+.box-2{
+  border: 1vw solid black;
+  
+  background-color:darkblue;
+  grid-column: 1/2;
+  grid-row: 3/4;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideBT;
+}
+.i2{
+ position: relative;
+  width: 18vw;
+  height: 100vw;
+  background-color: red;
+}
+@keyframes slideBT {
+  from {
+    margin-top: 100vw;
+   
+  }
+ 
+  to {
+     margin-top: -15vw; 
+  
+  }
+}
+.title_box{
+  width: 60vw;
+  height: 8vw;
+  text-align: right;
+
+}
+
  .window-1{
    
    background-color: white;
@@ -151,6 +314,9 @@ export default {
   grid-row: 1/2;
 
 }
+.reverse{
+  transform: rotateX(180deg) rotateY(180deg);
+}
 .boxX{
   width: 20vw;
   height: 12.36vw;
@@ -175,27 +341,33 @@ export default {
 .box-1{
   border: 1vw solid black;
   border-left: unset;
-    border-right: unset;
+  border-right: unset;
   position: relative;
-  /* background-color:rgb(151, 23, 23); */
-  background-color:red;
+  background-color: red; 
   grid-column: 1/4;
   grid-row: 2/3;
   animation-duration: 1.5s;
   animation-timing-function: ease-out; 
-  animation-name: slideRL;
+  animation-name: slideRL; 
+
 }
-.box-2{
-  border: 1vw solid black;
+.front{
+    width: 100vw;
+   height: 8vw;
   
-  background-color:darkblue;
-  grid-column: 1/2;
-  grid-row: 3/4;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards; 
-  animation-name: slideBT;
+  /* background-color: red;  */
 }
+.back{
+  
+  /* background-color: yellow; */
+   width: 100vw;
+   height: 8vw;
+    /* border-left:1vw solid black;*/
+    border-right:1vw solid black; 
+     /* padding-right: 10vw; */
+
+}
+
 .box-3{
   
   border-right: 1vw solid black;;
@@ -207,6 +379,7 @@ export default {
   animation-fill-mode: forwards; 
   animation-name: mainBT;
 }
+
 @keyframes mainBT {
   from {
     margin-top: 100vw;
@@ -305,10 +478,35 @@ export default {
   }
 } */
 .title_container{
- text-align: right;
-  width:60vw;
-  height: 10vw;
+  /* position: relative; */
+  /* padding-right: 10vw; */
+ /* text-align: right;  */
+  /* margin-left: 0; */
+  width:100vw;
+  height: 8vw;
+  border-right: 1vw solid transparent;  
+  /* grid-column: 1/4;
+  grid-row: 2/3; */
+  /* animation-fill-mode: forwards;
+  animation-delay: 3s;
+   animation-duration: 0.25s;
+  animation-timing-function: ease-in-out; 
+  animation-name: border-bannierTB; */
 }
+  
+
+
+/* 
+@keyframes border-bannierTB {
+  from {
+   border-right: unset;
+  }
+
+  to {
+    border-right: 1vw solid black;
+    
+  }
+} */
 .title_name{
   margin-top: 0vw; 
   color: black;
@@ -359,34 +557,25 @@ export default {
     width: 100%;
   }
 }
-.side_bar{
-  margin-top: -15vw;
+/* .side_bar{ */
+  /* margin-top: -15vw; */
 
   /* width: 20vw;
   height: 100vw; */
-  background-color:blue;
+  /* background-color:blue; */
   /* animation-duration: 1.5s;
   animation-timing-function: ease-out;
    animation-fill-mode: forwards; 
   animation-name: slideBT; */
   
  
-}
-@keyframes slideBT {
-  from {
-    margin-top: 100vw;
-   
-  }
- 
-  to {
-     margin-top: -15vw; 
-  
-  }
-}
+/* } */
+
+
 
 
  .box {
-      background-color: transparent; 
+      /* background-color: transparent;  */
       width: 20vw;
       height: 12.36vw;
       /* border: solid 1vw black; */
@@ -416,10 +605,12 @@ export default {
       color: #111111;
       }
       .box-back {
-      background-color: red;
+      background-color: darkblue;
       color: #eeeeee;
       transform: rotateX(180deg);
       }
+
+     
  footer{
   /* width: 100vw;
   height: 5vw; */

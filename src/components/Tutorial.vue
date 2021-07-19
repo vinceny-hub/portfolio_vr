@@ -5,7 +5,7 @@
       <router-link to="/" class="navbar-brand">Landing</router-link>
        </li>
        <li class="">
-      <router-link to="/home" class="navbar-brand">bezKoder</router-link>
+      <router-link to="/home" class="navbar-brand">Home</router-link>
        </li>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
