@@ -21,17 +21,37 @@
         </li>
       </div>
     </nav>
-      <vue-flip active-click="" class="box-2">
-          <template v-slot:front class="front">
+   
+      <vue-flip active-click="" v-model="flipped" v-on:click="buttonClick()"  id="side" class="box-2">
+          <template v-slot:front class="">
+        
             <div class="i1">Front</div>
           </template>
-          <template v-slot:back class="back">
+          <template v-slot:back class="">
+         
             <span>
              <div class="i2">back</div>
             </span>
           </template>
+          
         </vue-flip>
-    <div class="boxX">
+
+
+         <vue-flip active-click="" v-model="flipped" v-on:click="buttonClick()"  id="littleBox" class="boxX">
+          <template v-slot:front class="">
+        
+            <div class="">Front</div>
+          </template>
+          <template v-slot:back class="">
+         
+            <span>
+             <div class="">back</div>
+            </span>
+          </template>
+          
+        </vue-flip>
+    
+    <!-- <div class="boxX">
         <div class="box">
       <div class="box-inner">
         <div class="box-front">
@@ -42,8 +62,8 @@
         </div>
       </div>
       </div>
-    </div>
-     <vue-flip active-click="" width="100vw" height="8vw" v-on:click="buttonClick(1)" id="id" class="box-1" horizontal="true">
+    </div> -->
+     <vue-flip  active-click="" width="100vw" height="8vw" v-on:click="buttonClick()" v-model="flipped" id="id" class="box-1" horizontal="true">
           <template v-slot:front class="front">
              <!-- <div class="title_bar">-->
          <div class="title_container"> 
@@ -124,9 +144,18 @@ export default {
   props: {
     msg: String
   },
+  data() {
+            return {
+                flipped: false,
+                // unflipped: true
+            };
+        },
+
+  
    components: {
       'vue-flip': VueFlip
     },
+    
      methods:{
 
      
@@ -138,15 +167,40 @@ export default {
           //  let count = JSON.parse(localStorage.getItem('count'))
            localStorage.setItem('count', valeur); 
  },
+
+ flip(){
+  this.flipped  == !this.flipped ? false:true
+  
+         
+           if(this.flipped){
+             this.flipped == false
+              // this.unflip()
+            
+                console.log(this.flipped)
+           }
+        
+ },
+//  unflip(){
+//   this.flipped  == false
+  
+         
+//            if(this.flipped){
+//               // let count = JSON.parse(localStorage.getItem('count'))
+//               //  let val = count+1
+//               // localStorage.setItem('count', val); 
+//             this.buttonClick()
+//                 console.log(this.flipped)
+//            }
+        
+//  },
         
         buttonClick() {
-          //  let valeur = 1
-           
+        
            let count = JSON.parse(localStorage.getItem('count'))
-          // //  localStorage.setItem('count', valeur); 
-          //  let valeur = count+1
+     
+         
 
-          if(count >=2){
+          if(count >=3){
             let zero = 0
             localStorage.setItem('count', zero); 
           }
@@ -187,13 +241,16 @@ export default {
 
       // console.log(valeur)
        this.myFunction(count)
+       this.flip()
       },
 
 
       myFunction(count) {
         // var color = ["#3b609b", "#9b3b3b", "#3b9b81", "#7da5a4"];
-        var color = ["red", "yellow", "darkblue",];
-      
+        var color =     ["red", "darkblue","yellow", "darkblue", "darkblue"];
+        var colorSide = ["darkblue", "yellow","red", "yellow","red"];
+        var colorLittleBox = ["yellow","red", "darkblue", "red","yellow"];
+        // this.flipped = true
         
           //   let count = 0
           //   this.count = i+1
@@ -201,6 +258,8 @@ export default {
               
   // var rand = Math.floor(Math.random() * color.length);
     document.getElementById('id').style.background = color[count];
+    document.getElementById('side').style.background = colorSide[count];
+    document.getElementById('littleBox').style.background = colorLittleBox[count];
     console.log(count)
      
      }
@@ -255,7 +314,7 @@ export default {
 .box-2{
   border: 1vw solid black;
   
-  background-color:darkblue;
+  background-color:darkblue; 
   grid-column: 1/2;
   grid-row: 3/4;
   animation-duration: 1.5s;
@@ -267,7 +326,7 @@ export default {
  position: relative;
   width: 18vw;
   height: 100vw;
-  background-color: red;
+  /* background-color: red; */
 }
 @keyframes slideBT {
   from {
