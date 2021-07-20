@@ -36,11 +36,11 @@
           
         </vue-flip>
 
-
-         <vue-flip active-click="" v-model="flipped" v-on:click="buttonClick()"  id="littleBox" class="boxX">
+         <!-- <a  @mouseover="buttonClick">  -->
+         <vue-flip active-click=""   @mouseover="mouseOver" v-model="flipped" v-on:click="buttonClick()"  id="littleBox" class="boxX">
           <template v-slot:front class="">
         
-            <div class="">Front</div>
+            <div class=""   @mouseover="mouseOver">Front</div>
           </template>
           <template v-slot:back class="">
          
@@ -50,7 +50,7 @@
           </template>
           
         </vue-flip>
-    
+        <!-- </a> -->
     <!-- <div class="boxX">
         <div class="box">
       <div class="box-inner">
@@ -63,7 +63,7 @@
       </div>
       </div>
     </div> -->
-     <vue-flip  active-click="" width="100vw" height="8vw" v-on:click="buttonClick()" v-model="flipped" id="id" class="box-1" horizontal="true">
+     <vue-flip  active-click=""    @mouseover="mouseOver" width="100vw" height="8vw" v-on:click="buttonClick()" v-model="flipped" id="id" class="box-1" horizontal="true">
           <template v-slot:front class="front">
              <!-- <div class="title_bar">-->
          <div class="title_container"> 
@@ -102,7 +102,13 @@
       <div class="side_bar"></div>
     </div> -->
     <div class="box-3">
-      
+      <h2> Choose your Mondrian theme </h2>
+      <div class="containerBox">
+        <div class="colorBox colorBox1"></div>
+        <div class="colorBox colorBox2 "></div>
+        <div class="colorBox colorBox3"></div>
+        <div class="colorBox colorBox4"></div>
+    </div>
       
       
       <div class="container2">
@@ -147,6 +153,7 @@ export default {
   data() {
             return {
                 flipped: false,
+                active: false
                 // unflipped: true
             };
         },
@@ -158,6 +165,13 @@ export default {
     
      methods:{
 
+
+//  mouseOver(){
+//             // this.active = !this.active;   
+//             this.flipped = !this.flipped
+//             this.buttonClick()
+            
+//         },
      
 
  local(){
@@ -293,6 +307,25 @@ export default {
   color: #2c3e50;
   /* margin-top: 60px; 
 } */
+
+.containerBox{
+  display: flex;
+  justify-content: space-around;
+   margin-left: 15vw;
+  margin-right: 15vw;
+  
+}
+
+.colorBox{
+  
+  width: 2vw;
+  height: 2vw;
+  border: solid 0.1vw black;
+  /* margin-left: 3vw;
+  margin-right: 3vw; */
+ 
+  
+}
 .container{
   display: grid;
   grid-template-columns: [first] 20vw [line2] 60vw [line3] 20vw [end];
@@ -445,7 +478,7 @@ export default {
     border-top: 1vw solid black;
    
   }
-  99%{
+  94%{
     border-top: 1vw solid black;
   }
   to {
