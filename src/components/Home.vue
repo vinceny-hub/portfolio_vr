@@ -63,7 +63,7 @@
       </div>
       </div>
     </div> -->
-     <vue-flip  active-click=""    @mouseover="mouseOver" width="100vw" height="8vw" v-on:click="buttonClick()" v-model="flipped" id="id" class="box-1" horizontal="true">
+     <vue-flip  active-click=""    @mouseover="mouseOver" width="100vw" height="8vw" v-on:click="buttonClick()" v-model="flipped" id="bannier" class="box-1" horizontal="true">
           <template v-slot:front class="front">
              <!-- <div class="title_bar">-->
          <div class="title_container"> 
@@ -104,11 +104,13 @@
     <div class="box-3">
       <h2> Choose your Mondrian theme </h2>
       <div class="containerBox">
-        <div class="colorBox colorBox1"></div>
-        <div class="colorBox colorBox2 "></div>
-        <div class="colorBox colorBox3"></div>
-        <div class="colorBox colorBox4"></div>
-    </div>
+         <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(0)" v-model="flipped" id="anim" class="colorBox colorBox1" horizontal="true"></vue-flip>
+        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(1),animate()" v-model="flipped" id="anim" class="colorBox colorBox2" horizontal="true"></vue-flip>
+        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(2)" v-model="flipped" id="" class="colorBox colorBox3" horizontal="true"></vue-flip>
+        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(3)" v-model="flipped" id="" class="colorBox colorBox4" horizontal="true"></vue-flip>
+    
+     
+      </div>
       
       
       <div class="container2">
@@ -171,7 +173,41 @@ export default {
 //             this.flipped = !this.flipped
 //             this.buttonClick()
             
-//         },
+//         }
+
+
+animate(){
+
+
+  var elBannier = document.getElementById('bannier');
+  elBannier.style.animation = 'none';
+  elBannier.offsetHeight; /* trigger reflow */
+  elBannier.style.animation = null; 
+
+    var elSlide = document.getElementById('side');
+  elSlide.style.animation = 'none';
+  elSlide.offsetHeight; /* trigger reflow */
+  elSlide.style.animation = null; 
+
+  var elLittleBox = document.getElementById('littleBox');
+  elLittleBox.style.animation = 'none';
+  elLittleBox.offsetHeight; /* trigger reflow */
+  elLittleBox.style.animation = null; 
+  
+
+},
+    
+
+
+
+changeBodyBg(value){
+   // this.flipped  == !this.flipped ? false:true
+        // location.reload()
+        localStorage.setItem('count', value); 
+       
+         this.buttonClick()
+         
+    },
      
 
  local(){
@@ -271,7 +307,7 @@ export default {
           // console.log(count)
               
   // var rand = Math.floor(Math.random() * color.length);
-    document.getElementById('id').style.background = color[count];
+    document.getElementById('bannier').style.background = color[count];
     document.getElementById('side').style.background = colorSide[count];
     document.getElementById('littleBox').style.background = colorLittleBox[count];
     console.log(count)
@@ -323,8 +359,22 @@ export default {
   border: solid 0.1vw black;
   /* margin-left: 3vw;
   margin-right: 3vw; */
+  /* -webkit-animation:slideRL; */
  
   
+}
+
+.colorBox1{
+background-color: red;
+}
+.colorBox2{
+  background-color:darkblue;
+}
+.colorBox3{
+  background-color:yellow;
+}
+.colorBox4{
+  background-color: white;
 }
 .container{
   display: grid;
@@ -443,6 +493,7 @@ export default {
   animation-name: slideRL; 
 
 }
+
 .front{
     width: 100vw;
    height: 8vw;
@@ -473,6 +524,21 @@ export default {
 }
 
 @keyframes mainBT {
+  from {
+    margin-top: 100vw;
+    border-top: 1vw solid black;
+   
+  }
+  94%{
+    border-top: 1vw solid black;
+  }
+  to {
+     margin-top: 0vw; 
+     /* border-top: unset; */
+  
+  }
+}
+@keyframes anim {
   from {
     margin-top: 100vw;
     border-top: 1vw solid black;
