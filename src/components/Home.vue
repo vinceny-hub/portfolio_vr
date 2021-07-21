@@ -104,10 +104,66 @@
     <div class="box-3">
       <h2> Choose your Mondrian theme </h2>
       <div class="containerBox">
-         <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(0)" v-model="flipped" id="anim" class="colorBox colorBox1" horizontal="true"></vue-flip>
-        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(1),animate()" v-model="flipped" id="anim" class="colorBox colorBox2" horizontal="true"></vue-flip>
-        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(2)" v-model="flipped" id="" class="colorBox colorBox3" horizontal="true"></vue-flip>
-        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(3)" v-model="flipped" id="" class="colorBox colorBox4" horizontal="true"></vue-flip>
+         <!-- <vue-flip active-click="" width="200px" height="50px">
+          <template v-slot:front class="">
+            <div class="frontEx">
+            front
+            </div>
+          </template>
+          <template v-slot:back class="">
+              <div class="backEx">
+            back
+              </div>
+          </template>
+        </vue-flip> -->
+         <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="changeBodyBg(0)" v-model="flipped" id="anim" class="colorBox colorBox0" horizontal="true">
+            <template v-slot:front class="back2">
+            
+             <!-- <div class="title_bar">-->
+          <div class="miniBox"> 
+           <div class="miniLittleBox"></div>
+            <div class="miniBannier"></div>
+              <div class="miniSide"></div>
+         </div> 
+              
+            
+          </template>
+          <template v-slot:back class="front2">
+            
+         <div class="miniBox0"> 
+           <div class="miniLittleBox"></div>
+            <div class="miniBannier"></div>
+              <div class="miniSide"></div>
+      
+             </div>  
+          </template> 
+          
+           </vue-flip>
+        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(1),animate()" id="anim" class="colorBox colorBox1" horizontal="true">
+           <div class="miniSide"></div>
+           <div class="miniBannier"></div>
+           <div class="miniLittleBox"></div>
+        </vue-flip>
+        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(2)" v-model="flipped" id="" class="colorBox colorBox2" horizontal="true">
+           <div class="miniSide"></div>
+           <div class="miniBannier"></div>
+           <div class="miniLittleBox"></div>
+        </vue-flip>
+        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(3)" v-model="flipped" id="" class="colorBox colorBox3" horizontal="true">
+           <div class="miniSide"></div>
+           <div class="miniBannier"></div>
+           <div class="miniLittleBox"></div>
+        </vue-flip>
+          <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(4)" v-model="flipped" id="" class="colorBox colorBox4" horizontal="true">
+             <div class="miniSide"></div>
+           <div class="miniBannier"></div>
+           <div class="miniLittleBox"></div>
+          </vue-flip>
+            <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(5)" v-model="flipped" id="" class="colorBox colorBox5" horizontal="true">
+               <div class="miniSide"></div>
+           <div class="miniBannier"></div>
+           <div class="miniLittleBox"></div>
+            </vue-flip>
     
      
       </div>
@@ -188,6 +244,7 @@ animate(){
   elSlide.style.animation = 'none';
   elSlide.offsetHeight; /* trigger reflow */
   elSlide.style.animation = null; 
+  // this.flipped  == !this.flipped ? false:true
 
   var elLittleBox = document.getElementById('littleBox');
   elLittleBox.style.animation = 'none';
@@ -250,7 +307,7 @@ changeBodyBg(value){
      
          
 
-          if(count >=3){
+          if(count >=4){
             let zero = 0
             localStorage.setItem('count', zero); 
           }
@@ -297,9 +354,10 @@ changeBodyBg(value){
 
       myFunction(count) {
         // var color = ["#3b609b", "#9b3b3b", "#3b9b81", "#7da5a4"];
-        var color =     ["red", "darkblue","yellow", "darkblue", "darkblue"];
-        var colorSide = ["darkblue", "yellow","red", "yellow","red"];
-        var colorLittleBox = ["yellow","red", "darkblue", "red","yellow"];
+       
+        var colorSide = ["darkblue", "yellow","red", "darkblue","yellow","red"];
+         var color =     ["red", "darkblue","yellow", "yellow", "red","darkblue"];
+        var colorLittleBox = ["yellow","red", "darkblue", "red","darkblue","yellow"];
         // this.flipped = true
         
           //   let count = 0
@@ -343,6 +401,16 @@ changeBodyBg(value){
   color: #2c3e50;
   /* margin-top: 60px; 
 } */
+.frontEx{
+  width: 3vw;
+  height: 3vw;
+  background-color: royalblue;
+}
+.backEx{
+  width: 3vw;
+  height: 3vw;
+  background-color: red;
+}
 
 .containerBox{
   display: flex;
@@ -353,10 +421,10 @@ changeBodyBg(value){
 }
 
 .colorBox{
-  
-  width: 2vw;
-  height: 2vw;
+  width: 3vw;
+  height: 3vw;
   border: solid 0.1vw black;
+ 
   /* margin-left: 3vw;
   margin-right: 3vw; */
   /* -webkit-animation:slideRL; */
@@ -364,17 +432,119 @@ changeBodyBg(value){
   
 }
 
+.miniBox{
+  width: 3vw;
+  height: 3vw;
+  display: grid;
+  grid-template-columns: 0.91vw 0.66vw 0.25vw 0.91vw 0.25vw;
+  grid-template-rows: 0.45vw 0.55vw 0.5vw 1vw 0.5vw;
+  /* transform: rotateX(0deg) rotateY(0deg); */
+  background-color: white;
+  
+}
+
+
+.colorBox0{
+   /* display: grid;
+  grid-template-columns: 1vw 2vw;
+  grid-auto-rows: 1vw 2vw; */
+
+background-color:white; 
+}
 .colorBox1{
-background-color: red;
+  background-color:darkblue;
 }
 .colorBox2{
-  background-color:darkblue;
+  background-color:yellow;
 }
 .colorBox3{
   background-color:yellow;
 }
 .colorBox4{
+  background-color: red;
+}
+.colorBox5{
+  background-color: darkblue;
+}
+.miniSide{
+   background-color: blue;
+    grid-column: 1/2;
+  grid-row: 1/6;
+   border-right: 0.2vw solid black;
+   
+
+
+ }
+ .miniBannier{
+   z-index: 10;
+background-color:red;
+ grid-column: 1/6;
+  grid-row: 2/3;
+  border: 0.2vw solid black; 
+  border-left: unset;
+  border-right: unset;
+ }
+.miniLittleBox{
+  background-color:yellow;
+ grid-column: 3/5;
+  grid-row: 4/5;
+  z-index: 10;
+    border: 0.2vw solid black; 
+}
+
+/* .miniBox0{
+  display: grid;
+  grid-template-columns: 0.91vw 0.66vw 0.25vw 0.91vw 0.25vw;
+  grid-template-rows: 0.45vw 0.55vw 0.5vw 1vw 0.5vw;
+  /* transform: rotateX(180deg) rotateY(180deg); */
+/* }  */
+.miniBox0{
+   width: 3vw;
+  height: 3vw;
+  display: grid;
+  grid-template-columns: 0.91vw 0.66vw 0.25vw 0.91vw 0.25vw;
+  grid-template-rows: 0.45vw 0.55vw 0.5vw 1vw 0.5vw;
+  transform: rotateX(180deg) rotateY(180deg);
   background-color: white;
+}
+
+.front2{
+  width: 3vw;
+  height: 3vw;
+  background-color: blue;
+}
+.back2{
+  background-color: red;
+   width: 3vw;
+  height: 3vw;
+}
+
+ .miniSide0{
+   
+   background-color: blue;
+    grid-column: 1/2;
+  grid-row: 1/6;
+   border-right: 0.2vw solid black;
+   
+
+
+ }
+ .miniBannier0{
+  
+background-color:red;
+ grid-column: 1/6;
+  grid-row: 2/3;
+  border: 0.2vw solid black; 
+  border-left: unset;
+  border-right: unset;
+ }
+.miniLittleBox0{
+  
+  background-color:yellow;
+ grid-column: 3/5;
+  grid-row: 4/5;
+  z-index: 10;
+    border: 0.2vw solid black; 
 }
 .container{
   display: grid;
@@ -498,16 +668,16 @@ background-color: red;
     width: 100vw;
    height: 8vw;
   
-  /* background-color: red;  */
+  
 }
 .back{
   
-  /* background-color: yellow; */
+  
    width: 100vw;
    height: 8vw;
-    /* border-left:1vw solid black;*/
+  
     border-right:1vw solid black; 
-     /* padding-right: 10vw; */
+   
 
 }
 
