@@ -76,7 +76,7 @@
               </div>
             </div> -->
            
-            <div class="box" active-click="" id="bannierDeep">
+            <!-- <div class="box" active-click="" id="bannierDeep">
               <div class="box-inner"  v-on:click="active">
             
                 <div class="box-front"  id="bannierFront">
@@ -93,7 +93,35 @@
                 </div>
                
               </div>
-            </div>
+            </div> -->
+
+
+
+
+             <vue-flip  active-click=""    @mouseover="mouseOver()" width="100vw" height="8vw" v-on:click="buttonClick()" v-model="flipped" id="bannier" class="box-1" horizontal="true">
+          <template v-slot:front class="front">
+             <!-- <div class="title_bar">-->
+         <div class="title_container"> 
+              <div class="title_box"> 
+              <h1 class="title_name">Vincent Robert</h1>
+              <h2 class="sousTitre">Développeur Web</h2>
+              </div>
+         <!-- </div>-->
+             </div> 
+          </template>
+          <template v-slot:back class="back">
+                <!-- <div class="title_bar">-->
+         <div class="title_container"> 
+         <div class="reverse back">
+             <div class="title_box"> 
+                <h1 class="title_name">Vincent Robert</h1>
+           <h2 class="sousTitre">Développeur Web</h2>
+         <!-- </div>-->
+             </div>
+         </div> 
+         </div>
+          </template>
+        </vue-flip>
 
 
           <!-- <div v-on:click="buttonClick()" v-bind="flipped" id="bannier" class="box-1" horizontal="true">  -->
@@ -305,18 +333,25 @@ export default {
      methods:{
 
 
-//  mouseOver(){
-//             // this.active = !this.active;   
-//             this.flipped = !this.flipped
-//             this.buttonClick()
+ mouseOver(){
+            // this.active = !this.active;   
+            // this.flipped = !this.flipped
+             this.flipped  = true
+        
             
-//         }
+            // this.buttonClick()
+            
+        },
 
 
 animate(){
 
 
-  var elBannier = document.getElementById('bannierDeep');
+  // var elBannier = document.getElementById('bannierDeep');
+  // elBannier.style.animation = 'none';
+  // elBannier.offsetHeight; 
+  // elBannier.style.animation = null; 
+   var elBannier = document.getElementById('bannier');
   elBannier.style.animation = 'none';
   elBannier.offsetHeight; 
   elBannier.style.animation = null; 
@@ -342,10 +377,11 @@ changeBodyBg(value){
    // this.flipped  == !this.flipped ? false:true
         // location.reload()
         localStorage.setItem('count', value); 
-        if(value == 0 ){
+        if(value>=0 ){
            this.flipped  == !this.flipped ? false:true
         }
          this.buttonClick()
+         this.resetFlip()
          
     },
      
@@ -362,13 +398,24 @@ changeBodyBg(value){
   this.flipped  == !this.flipped ? false:true
   
          
-           if(this.flipped){
+          //  if(this.flipped){
+          //    this.flipped == false
+          //     // this.unflip()
+            
+          //       console.log(this.flipped)
+          //  }
+          this.resetFlip()
+        
+ },
+
+ resetFlip(){
+     if(this.flipped){
              this.flipped == false
               // this.unflip()
             
                 console.log(this.flipped)
            }
-        
+
  },
 //  unflip(){
 //   this.flipped  == false
@@ -455,9 +502,10 @@ flipBannier(){
           // console.log(count)
               
   // var rand = Math.floor(Math.random() * color.length);
-  document.getElementById('bannierFront').style.background = color[count];
-    document.getElementById('bannierBack').style.background = color[count];
-        document.getElementById('bannierDeep').style.background = color[count];
+  // document.getElementById('bannierFront').style.background = color[count];
+  //   document.getElementById('bannierBack').style.background = color[count];
+        // document.getElementById('bannierDeep').style.background = color[count];
+           document.getElementById('bannier').style.background = color[count];
     
 
     document.getElementById('side').style.background = colorSide[count];
