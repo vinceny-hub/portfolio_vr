@@ -63,64 +63,30 @@
       </div>
       </div>
     </div> -->
-     <!-- <vue-flip  active-click=""    @mouseover="mouseOver" width="100vw" height="8vw" v-on:click="buttonClick()" v-bind="flipped" id="bannier" class="box-1" horizontal="true"> -->
-
-          <!-- <div class="box">
-              <div class="box-inner">
-                <div class="box-front">
-                  <h2>Face frontale</h2>
-                </div>
-                <div class="box-back">
-                  <h2>Face arrière</h2>
-                </div>
-              </div>
-            </div> -->
-           
-            <div class="box" active-click="" id="bannierDeep">
-              <div class="box-inner"  v-on:click="active">
-            
-                <div class="box-front"  id="bannierFront">
-                      <div class="box-t">
-                  <h1 class="title_name">Vincent Robert</h1>
-           <h2 class="sousTitre">Développeur Web</h2>
-                      </div>
-                </div>
-                <div class="box-back"  id="bannierBack">
-                      <div class="box-t">
-                <h1 class="title_name">Vincent Robert</h1>
-           <h2 class="sousTitre">Développeur Web</h2>
-                      </div>
-                </div>
-               
-              </div>
-            </div>
-
-
-          <!-- <div v-on:click="buttonClick()" v-bind="flipped" id="bannier" class="box-1" horizontal="true">  -->
-            <!-- <div class="front">             -->
-              <!-- <div class="box-inner"> 
+     <vue-flip  active-click=""    @mouseover="mouseOver" width="100vw" height="8vw" v-on:click="buttonClick()" v-model="flipped" id="bannier" class="box-1" horizontal="true">
+          <template v-slot:front class="front">
+             <!-- <div class="title_bar">-->
+         <div class="title_container"> 
               <div class="title_box"> 
               <h1 class="title_name">Vincent Robert</h1>
               <h2 class="sousTitre">Développeur Web</h2>
-              </div> -->
+              </div>
          <!-- </div>-->
-              
-          <!-- </div>  -->
-          <!-- <template v-slot:back class="back"> -->
+             </div> 
+          </template>
+          <template v-slot:back class="back">
                 <!-- <div class="title_bar">-->
-         <!-- <div class="title_container">  -->
-         <!-- <div class="reverse back"> -->
-             <!-- <div class="box-back"> 
-            <h1 class="title_name">Vincent Robert</h1>
-           <h2 class="sousTitre">Développeur Web</h2> -->
+         <div class="title_container"> 
+         <div class="reverse back">
+             <div class="title_box"> 
+                <h1 class="title_name">Vincent Robert</h1>
+           <h2 class="sousTitre">Développeur Web</h2>
          <!-- </div>-->
-             <!-- </div> -->
-         <!-- </div>  -->
-             <!-- </div>
+             </div>
+         </div> 
          </div>
-        </div> -->
-          <!-- </template> -->
-        <!-- </vue-flip> -->
+          </template>
+        </vue-flip>
     <!-- <div class="box-1"  v-on:click="flipCard()">
        <div class="title_bar">
          <div class="title_container">
@@ -137,104 +103,70 @@
     </div> -->
     <div class="box-3">
       <h2> Choose your Mondrian theme </h2>
-        <div class="containerBox">
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(),changeBodyBg(0)" v-model="flippedBRY" id="anim" class="colorBox colorBox0" horizontal="true">
-            <template v-slot:front class="frontBRY">            
-              <div class="miniBoxFront"> 
-                <div class="miniLittleBoxBRY"></div>
-                <div class="miniBannierBRY"></div>
-                <div class="miniSideBRY"></div>
-            </div>           
-            </template>
-            <template v-slot:back class="backBRY">            
-              <div class="miniBoxBack"> 
-                <div class="miniLittleBoxBRY"></div>
-                <div class="miniBannierBRY"></div>
-                <div class="miniSideBRY"></div>      
-              </div>  
-            </template>           
-          </vue-flip>
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(1)" v-model="flippedYBR" id="anim" class="colorBox colorBox0" horizontal="true">
-            <template v-slot:front class="backBRY">         
-              <div class="miniBoxFront"> 
-                <div class="miniLittleBoxYBR"></div>
-                <div class="miniBannierYBR"></div>
-                <div class="miniSideYBR"></div>
-              </div>           
-            </template>
-            <template v-slot:back class="backBRY">            
-              <div class="miniBoxBack"> 
-                <div class="miniLittleBoxYBR"></div>
-                <div class="miniBannierYBR"></div>
-                <div class="miniSideYBR"></div>     
+      <div class="containerBox">
+         <!-- <vue-flip active-click="" width="200px" height="50px">
+          <template v-slot:front class="">
+            <div class="frontEx">
+            front
+            </div>
+          </template>
+          <template v-slot:back class="">
+              <div class="backEx">
+            back
+              </div>
+          </template>
+        </vue-flip> -->
+         <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="changeBodyBg(0)" v-model="flipped" id="anim" class="colorBox colorBox0" horizontal="true">
+            <template v-slot:front class="back2">
+            
+             <!-- <div class="title_bar">-->
+          <div class="miniBox"> 
+           <div class="miniLittleBox"></div>
+            <div class="miniBannier"></div>
+              <div class="miniSide"></div>
+         </div> 
+              
+            
+          </template>
+          <template v-slot:back class="front2">
+            
+         <div class="miniBox0"> 
+           <div class="miniLittleBox"></div>
+            <div class="miniBannier"></div>
+              <div class="miniSide"></div>
+      
              </div>  
-            </template>           
+          </template> 
+          
+           </vue-flip>
+        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(1),animate()" id="anim" class="colorBox colorBox1" horizontal="true">
+           <div class="miniSide"></div>
+           <div class="miniBannier"></div>
+           <div class="miniLittleBox"></div>
+        </vue-flip>
+        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(2)" v-model="flipped" id="" class="colorBox colorBox2" horizontal="true">
+           <div class="miniSide"></div>
+           <div class="miniBannier"></div>
+           <div class="miniLittleBox"></div>
+        </vue-flip>
+        <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(3)" v-model="flipped" id="" class="colorBox colorBox3" horizontal="true">
+           <div class="miniSide"></div>
+           <div class="miniBannier"></div>
+           <div class="miniLittleBox"></div>
+        </vue-flip>
+          <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(4)" v-model="flipped" id="" class="colorBox colorBox4" horizontal="true">
+             <div class="miniSide"></div>
+           <div class="miniBannier"></div>
+           <div class="miniLittleBox"></div>
           </vue-flip>
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(2)" v-model="flippedRYB" id="anim" class="colorBox colorBox0" horizontal="true">
-            <template v-slot:front class="frontBRY">          
-              <div class="miniBoxFront"> 
-                <div class="miniLittleBoxRYB"></div>
-                <div class="miniBannierRYB"></div>
-                <div class="miniSideRYB"></div>
-              </div>            
-            </template>
-            <template v-slot:back class="backBRY">            
-              <div class="miniBoxBack"> 
-                <div class="miniLittleBoxRYB"></div>
-                <div class="miniBannierRYB"></div>
-                <div class="miniSideRYB"></div>      
-              </div>  
-            </template>           
-          </vue-flip>
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(3)" v-model="flippedBYR" id="anim" class="colorBox colorBox0" horizontal="true">
-            <template v-slot:front class="frontBRY">            
-              <div class="miniBoxFront"> 
-                <div class="miniLittleBoxBYR"></div>
-                <div class="miniBannierBYR"></div>
-                <div class="miniSideBYR"></div>
-              </div>            
-            </template>
-            <template v-slot:back class="backBRY">            
-              <div class="miniBoxBack"> 
-                <div class="miniLittleBoxBYR"></div>
-                <div class="miniBannierBYR"></div>
-                <div class="miniSideBYR"></div>      
-              </div>  
-            </template>           
-          </vue-flip>
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(4)" v-model="flippedYRB" id="anim" class="colorBox colorBox0" horizontal="true">
-            <template v-slot:front class="frontBRY">         
-              <div class="miniBoxFront"> 
-                <div class="miniLittleBoxYRB"></div>
-                <div class="miniBannierYRB"></div>
-                <div class="miniSideYRB"></div>
-              </div>             
-            </template>
-            <template v-slot:back class="backBRY">            
-              <div class="miniBoxBack"> 
-                <div class="miniLittleBoxYRB"></div>
-                <div class="miniBannierYRB"></div>
-                <div class="miniSideYRB"></div>      
-              </div>  
-            </template>           
-          </vue-flip>
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(5)" v-model="flippedRBY" id="anim" class="colorBox colorBox0" horizontal="true">
-            <template v-slot:front class="frontBRY">          
-              <div class="miniBoxFront"> 
-                <div class="miniLittleBoxRBY"></div>
-                <div class="miniBannierRBY"></div>
-                <div class="miniSideRBY"></div>
-              </div>            
-            </template>
-            <template v-slot:back class="backBRY">            
-              <div class="miniBoxBack"> 
-                <div class="miniLittleBoxRBY"></div>
-                <div class="miniBannierRBY"></div>
-                <div class="miniSideRBY"></div>      
-              </div>  
-            </template>           
-          </vue-flip>    
-        </div>
+            <vue-flip  active-click=""    @mouseover="mouseOver" v-on:click="changeBodyBg(5)" v-model="flipped" id="" class="colorBox colorBox5" horizontal="true">
+               <div class="miniSide"></div>
+           <div class="miniBannier"></div>
+           <div class="miniLittleBox"></div>
+            </vue-flip>
+    
+     
+      </div>
       
       
       <div class="container2">
@@ -248,23 +180,16 @@
       <div class="window window-3"><p>Projet 3</p></div>
       </router-link>
           </div>
-
-
             <div class="box">
-              <div class="box-inner">
-                <div class="box-front">
-                  <h1 class="title_name">Vincent Robert</h1>
-           <h2 class="sousTitre">Développeur Web</h2>
-                </div>
-                <div class="box-back">
-                <h1 class="title_name">Vincent Robert</h1>
-           <h2 class="sousTitre">Développeur Web</h2>
-                </div>
-              </div>
-            </div>
-
-
-
+      <div class="box-inner">
+        <div class="box-front">
+          <h2>Face frontale</h2>
+        </div>
+        <div class="box-back">
+          <h2>Face arrière</h2>
+        </div>
+      </div>
+    </div>
     </div>
     <footer class="box-4">
     </footer>
@@ -286,70 +211,48 @@ export default {
   data() {
             return {
                 flipped: false,
-                flippedBRY: false,
-                 flippedYBR: false,
-                  flippedRYB: false,
-                   flippedBYR: false,
-                    flippedYRB: false,
-                     flippedRBY: false,
                 active: false
                 // unflipped: true
             };
         },
-
   
    components: {
       'vue-flip': VueFlip
     },
     
      methods:{
-
-
 //  mouseOver(){
 //             // this.active = !this.active;   
 //             this.flipped = !this.flipped
 //             this.buttonClick()
             
 //         }
-
-
 animate(){
-
-
-  var elBannier = document.getElementById('bannierDeep');
+  var elBannier = document.getElementById('bannier');
   elBannier.style.animation = 'none';
-  elBannier.offsetHeight; 
+  elBannier.offsetHeight; /* trigger reflow */
   elBannier.style.animation = null; 
-
     var elSlide = document.getElementById('side');
   elSlide.style.animation = 'none';
   elSlide.offsetHeight; /* trigger reflow */
   elSlide.style.animation = null; 
   // this.flipped  == !this.flipped ? false:true
-
   var elLittleBox = document.getElementById('littleBox');
   elLittleBox.style.animation = 'none';
   elLittleBox.offsetHeight; /* trigger reflow */
   elLittleBox.style.animation = null; 
   
-
 },
     
-
-
-
 changeBodyBg(value){
    // this.flipped  == !this.flipped ? false:true
         // location.reload()
         localStorage.setItem('count', value); 
-        if(value == 0 ){
-           this.flipped  == !this.flipped ? false:true
-        }
+       
          this.buttonClick()
          
     },
      
-
  local(){
      let valeur = 1
                        
@@ -357,7 +260,6 @@ changeBodyBg(value){
           //  let count = JSON.parse(localStorage.getItem('count'))
            localStorage.setItem('count', valeur); 
  },
-
  flip(){
   this.flipped  == !this.flipped ? false:true
   
@@ -389,7 +291,6 @@ changeBodyBg(value){
            let count = JSON.parse(localStorage.getItem('count'))
      
          
-
           if(count >=4){
             let zero = 0
             localStorage.setItem('count', zero); 
@@ -403,11 +304,8 @@ changeBodyBg(value){
           }
         
            
-
            
-
           //  localStorage.setItem('count', valeur); 
-
           
           
           // let count = JSON.parse(localStorage.getItem('count'))
@@ -428,20 +326,10 @@ changeBodyBg(value){
       // let valeur = 0        
       // valeur+=increment;
       // document.getElementById('id').value=valeur;
-
       // console.log(valeur)
        this.myFunction(count)
        this.flip()
-       this.flipBannier()
       },
-
-flipBannier(){
-
-  let content = document.getElementById('bannierDeep').click();
-   content.toggleClass('active');
-
-},
-
       myFunction(count) {
         // var color = ["#3b609b", "#9b3b3b", "#3b9b81", "#7da5a4"];
        
@@ -455,11 +343,7 @@ flipBannier(){
           // console.log(count)
               
   // var rand = Math.floor(Math.random() * color.length);
-  document.getElementById('bannierFront').style.background = color[count];
-    document.getElementById('bannierBack').style.background = color[count];
-        document.getElementById('bannierDeep').style.background = color[count];
-    
-
+    document.getElementById('bannier').style.background = color[count];
     document.getElementById('side').style.background = colorSide[count];
     document.getElementById('littleBox').style.background = colorLittleBox[count];
     console.log(count)
@@ -467,14 +351,10 @@ flipBannier(){
      }
          },
            mounted(){
-
          
  this.local()      },
 }
-
-
  
-
 </script>
 
 
@@ -486,7 +366,6 @@ flipBannier(){
   padding: 0px !important;
   background-color: #DCDCDC;
  }
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -505,7 +384,6 @@ flipBannier(){
   height: 3vw;
   background-color: red;
 }
-
 .containerBox{
   display: flex;
   justify-content: space-around;
@@ -513,7 +391,6 @@ flipBannier(){
   margin-right: 15vw;
   
 }
-
 .colorBox{
   width: 3vw;
   height: 3vw;
@@ -525,8 +402,7 @@ flipBannier(){
  
   
 }
-
-.miniBoxFront{
+.miniBox{
   width: 3vw;
   height: 3vw;
   display: grid;
@@ -536,13 +412,10 @@ flipBannier(){
   background-color: white;
   
 }
-
-
 .colorBox0{
    /* display: grid;
   grid-template-columns: 1vw 2vw;
   grid-auto-rows: 1vw 2vw; */
-
 background-color:white; 
 }
 .colorBox1{
@@ -560,16 +433,14 @@ background-color:white;
 .colorBox5{
   background-color: darkblue;
 }
-.miniSideBRY{
-   background-color: darkblue;
+.miniSide{
+   background-color: blue;
     grid-column: 1/2;
   grid-row: 1/6;
    border-right: 0.2vw solid black;
    
-
-
  }
- .miniBannierBRY{
+ .miniBannier{
    z-index: 10;
 background-color:red;
  grid-column: 1/6;
@@ -578,137 +449,20 @@ background-color:red;
   border-left: unset;
   border-right: unset;
  }
-.miniLittleBoxBRY{
+.miniLittleBox{
   background-color:yellow;
  grid-column: 3/5;
   grid-row: 4/5;
   z-index: 10;
     border: 0.2vw solid black; 
 }
-
-.miniSideYBR{
-background-color:yellow;
-grid-column: 1/2;
-grid-row: 1/6;
-border-right: 0.2vw solid black;
-}
-.miniBannierYBR{
-z-index: 10;
-background-color:darkblue;
-grid-column: 1/6;
-grid-row: 2/3;
-border: 0.2vw solid black; 
-border-left: unset;
-border-right: unset;
-}
-.miniLittleBoxYBR{
-background-color:red;
-grid-column: 3/5;
-grid-row: 4/5;
-z-index: 10;
-border: 0.2vw solid black; 
-}
-
-
-.miniSideRYB{
-background-color:red;
-grid-column: 1/2;
-grid-row: 1/6;
-border-right: 0.2vw solid black;
-}
-.miniBannierRYB{
-z-index: 10;
-background-color:yellow;
-grid-column: 1/6;
-grid-row: 2/3;
-border: 0.2vw solid black; 
-border-left: unset;
-border-right: unset;
-}
-.miniLittleBoxRYB{
-background-color: darkblue;
-grid-column: 3/5;
-grid-row: 4/5;
-z-index: 10;
-border: 0.2vw solid black; 
-}
-
-.miniSideBYR{
-background-color:darkblue;
-grid-column: 1/2;
-grid-row: 1/6;
-border-right: 0.2vw solid black;
-}
-.miniBannierBYR{
-z-index: 10;
-background-color:yellow;
-grid-column: 1/6;
-grid-row: 2/3;
-border: 0.2vw solid black; 
-border-left: unset;
-border-right: unset;
-}
-.miniLittleBoxBYR{
-background-color: red;
-grid-column: 3/5;
-grid-row: 4/5;
-z-index: 10;
-border: 0.2vw solid black; 
-}
-
-.miniSideYRB{
-background-color:yellow;
-grid-column: 1/2;
-grid-row: 1/6;
-border-right: 0.2vw solid black;
-}
-.miniBannierYRB{
-z-index: 10;
-background-color:red;
-grid-column: 1/6;
-grid-row: 2/3;
-border: 0.2vw solid black; 
-border-left: unset;
-border-right: unset;
-}
-.miniLittleBoxYRB{
-background-color: darkblue;
-grid-column: 3/5;
-grid-row: 4/5;
-z-index: 10;
-border: 0.2vw solid black; 
-}
-.miniSideRBY{
-background-color:red;
-grid-column: 1/2;
-grid-row: 1/6;
-border-right: 0.2vw solid black;
-}
-.miniBannierRBY{
-z-index: 10;
-background-color:darkblue;
-grid-column: 1/6;
-grid-row: 2/3;
-border: 0.2vw solid black; 
-border-left: unset;
-border-right: unset;
-}
-.miniLittleBoxRBY{
-background-color: yellow;
-grid-column: 3/5;
-grid-row: 4/5;
-z-index: 10;
-border: 0.2vw solid black; 
-}
-
-
 /* .miniBox0{
   display: grid;
   grid-template-columns: 0.91vw 0.66vw 0.25vw 0.91vw 0.25vw;
   grid-template-rows: 0.45vw 0.55vw 0.5vw 1vw 0.5vw;
   /* transform: rotateX(180deg) rotateY(180deg); */
 /* }  */
-.miniBoxBack{
+.miniBox0{
    width: 3vw;
   height: 3vw;
   display: grid;
@@ -717,7 +471,6 @@ border: 0.2vw solid black;
   transform: rotateX(180deg) rotateY(180deg);
   background-color: white;
 }
-
 .front2{
   width: 3vw;
   height: 3vw;
@@ -728,7 +481,6 @@ border: 0.2vw solid black;
    width: 3vw;
   height: 3vw;
 }
-
  .miniSide0{
    
    background-color: blue;
@@ -736,8 +488,6 @@ border: 0.2vw solid black;
   grid-row: 1/6;
    border-right: 0.2vw solid black;
    
-
-
  }
  .miniBannier0{
   
@@ -769,11 +519,9 @@ background-color:red;
   grid-template-columns: 35vw ;
   grid-template-rows: 15vw 15vw 15vw 15vw ;
   grid-row-gap: 5vw;
-
   overflow: hidden;
   justify-content: space-around;
  }
-
 .box-2{
   border: 1vw solid black;
   
@@ -806,9 +554,7 @@ background-color:red;
   width: 60vw;
   height: 8vw;
   text-align: right;
-
 }
-
  .window-1{
    
    background-color: white;
@@ -834,7 +580,6 @@ background-color:red;
   
   grid-column: 1/4;
   grid-row: 1/2;
-
 }
 .reverse{
   transform: rotateX(180deg) rotateY(180deg);
@@ -854,7 +599,6 @@ background-color:red;
     margin-left: 100vw;
     width: 100%;
   }
-
   to {
     margin-left: 0vw;
     width: 100%;
@@ -871,9 +615,7 @@ background-color:red;
   animation-duration: 1.5s;
   animation-timing-function: ease-out; 
   animation-name: slideRL; 
-
 }
-
 .front{
     width: 100vw;
    height: 8vw;
@@ -888,9 +630,7 @@ background-color:red;
   
     border-right:1vw solid black; 
    
-
 }
-
 .box-3{
   
   border-right: 1vw solid black;;
@@ -902,7 +642,6 @@ background-color:red;
   animation-fill-mode: forwards; 
   animation-name: mainBT;
 }
-
 @keyframes mainBT {
   from {
     margin-top: 100vw;
@@ -994,7 +733,6 @@ background-color:red;
 }
  /* .title_bar{ */
   /* position: relative;
-
   z-index: 10;
   width: 100vw;
   height: 10vw;
@@ -1009,7 +747,6 @@ background-color:red;
     margin-left: 100vw;
     width: 100%;
   }
-
   to {
     margin-left: 0vw;
     width: 100%;
@@ -1032,14 +769,11 @@ background-color:red;
   animation-name: border-bannierTB; */
 }
   
-
-
 /* 
 @keyframes border-bannierTB {
   from {
    border-right: unset;
   }
-
   to {
     border-right: 1vw solid black;
     
@@ -1060,14 +794,12 @@ background-color:red;
     margin-left: 100vw;
     width: 100%;
   }
-
   to {
     margin-left: 0vw;
     width: 100%;
   }
 }
   
-
 .sousTitre{
   color: white;
   margin-top: -4.5vw;
@@ -1089,7 +821,6 @@ background-color:red;
   50%{
     opacity: 1;
   }
-
   to {
     margin-left: 0vw;
     width: 100%;
@@ -1097,7 +828,6 @@ background-color:red;
 }
 /* .side_bar{ */
   /* margin-top: -15vw; */
-
   /* width: 20vw;
   height: 100vw; */
   /* background-color:blue; */
@@ -1108,65 +838,41 @@ background-color:red;
   
  
 /* } */
-
-
-
-
-.box {
-
-width: 100vw;
-height: 8vw;
-/* border: solid 1vw black; */
-background-color: white;
-/* border: 1px solid #eeeeee; */
-perspective: 1000px;
- border: 1vw solid black;
-  border-left: unset;
-  border-right: unset;
-  position: relative;
-  background-color: red; 
-  grid-column: 1/4;
-  grid-row: 2/3;
-  animation-duration: 1.5s;
-  animation-timing-function: ease-out; 
-  animation-name: slideRL; 
-
-}
-.box-t{
-  width: 60vw;
-  height: 8vw;
-}
-
-.box-inner {
-position: relative;
-width: 100vw;
-height: 8vw;
-text-align: right;
-transition: transform 0.5s;
-transform-style: preserve-3d;
-}
-.box:hover .box-inner {
-transform: rotateX(180deg);
-}
-.box:active .box-inner {
-transform: rotateX(180deg);
-}
-.box-front, .box-back {
-position: absolute;
-width: 100%;
-height: 100%;
-backface-visibility: hidden;
-}
-.box-front {
-background-color: red;
-color: #111111;
-}
-.box-back {
-background-color: red;
-color: #eeeeee;
-transform: rotateX(180deg);
-}
-
+ .box {
+      /* background-color: transparent;  */
+      width: 20vw;
+      height: 12.36vw;
+      /* border: solid 1vw black; */
+      background-color: white;
+      /* border: 1px solid #eeeeee; */
+      perspective: 1000px;
+      }
+      .box-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.5s;
+      transform-style: preserve-3d;
+      }
+      .box:hover .box-inner {
+      transform: rotateX(180deg);
+      }
+      .box-front, .box-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      }
+      .box-front {
+      background-color: yellow;
+      color: #111111;
+      }
+      .box-back {
+      background-color: darkblue;
+      color: #eeeeee;
+      transform: rotateX(180deg);
+      }
      
  footer{
   /* width: 100vw;
@@ -1177,5 +883,3 @@ transform: rotateX(180deg);
    grid-row: 4/5;
 } 
 </style>
-
-
