@@ -22,7 +22,7 @@
       </div>
     </nav>
    
-      <vue-flip active-click="" v-model="flipped" v-on:click="buttonClick()"  id="side" class="box-2">
+      <vue-flip active-click="" v-model="flipped"  @mouseover="mouseOver" v-on:click="buttonClick()"  id="side" class="box-2">
           <template v-slot:front class="">
         
             <div class="i1">Front</div>
@@ -98,13 +98,13 @@
 
 
 
-             <vue-flip  active-click=""    @mouseover="mouseOver()" width="100vw" height="8vw" v-on:click="buttonClick()" v-model="flipped" id="bannier" class="box-1" horizontal="true">
+             <vue-flip  active-click=""    @mouseover="mouseOver" width="100vw" height="8vw" v-on:click="buttonClick()" v-model="flipped" id="bannier" class="box-1" horizontal="true">
           <template v-slot:front class="front">
              <!-- <div class="title_bar">-->
          <div class="title_container"> 
               <div class="title_box"> 
-              <h1 class="title_name">Vincent Robert</h1>
-              <h2 class="sousTitre">Développeur Web</h2>
+              <h1 class="title_name" id="titleNameFront">Vincent Robert</h1>
+              <h2 class="sousTitre" id="sousTitreFront">Développeur Web</h2>
               </div>
          <!-- </div>-->
              </div> 
@@ -114,8 +114,8 @@
          <div class="title_container"> 
          <div class="reverse back">
              <div class="title_box"> 
-                <h1 class="title_name">Vincent Robert</h1>
-           <h2 class="sousTitre">Développeur Web</h2>
+                <h1 class="title_name"  id="titleNameBack">Vincent Robert</h1>
+           <h2 class="sousTitre"  id="sousTitreBack">Développeur Web</h2>
          <!-- </div>-->
              </div>
          </div> 
@@ -166,7 +166,7 @@
     <div class="box-3">
       <h2> Choose your Mondrian theme </h2>
         <div class="containerBox">
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(),changeBodyBg(0)" v-model="flippedBRY" id="anim" class="colorBox colorBox0" horizontal="true">
+          <vue-flip  active-click=""  width="6vw" height="6vw"  @mouseover="mouseOver" v-on:click="animate(),changeBodyBg(0)" v-model="flippedBRY" id="anim" class="colorBox colorBox0" horizontal="true">
             <template v-slot:front class="frontBRY">            
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxBRY"></div>
@@ -182,7 +182,7 @@
               </div>  
             </template>           
           </vue-flip>
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(1)" v-model="flippedYBR" id="anim" class="colorBox colorBox0" horizontal="true">
+          <vue-flip  active-click=""  width="6vw" height="6vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(1)" v-model="flippedYBR" id="anim" class="colorBox colorBox0" horizontal="true">
             <template v-slot:front class="backBRY">         
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxYBR"></div>
@@ -198,7 +198,7 @@
              </div>  
             </template>           
           </vue-flip>
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(2)" v-model="flippedRYB" id="anim" class="colorBox colorBox0" horizontal="true">
+          <vue-flip  active-click=""  width="6vw" height="6vw" @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(2)" v-model="flippedRYB" id="anim" class="colorBox colorBox0" horizontal="true">
             <template v-slot:front class="frontBRY">          
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxRYB"></div>
@@ -214,7 +214,7 @@
               </div>  
             </template>           
           </vue-flip>
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(3)" v-model="flippedBYR" id="anim" class="colorBox colorBox0" horizontal="true">
+          <vue-flip  active-click=""  width="6vw" height="6vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(3)" v-model="flippedBYR" id="anim" class="colorBox colorBox0" horizontal="true">
             <template v-slot:front class="frontBRY">            
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxBYR"></div>
@@ -230,7 +230,7 @@
               </div>  
             </template>           
           </vue-flip>
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(4)" v-model="flippedYRB" id="anim" class="colorBox colorBox0" horizontal="true">
+          <vue-flip  active-click=""  width="6vw" height="6vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(4)" v-model="flippedYRB" id="anim" class="colorBox colorBox0" horizontal="true">
             <template v-slot:front class="frontBRY">         
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxYRB"></div>
@@ -246,7 +246,7 @@
               </div>  
             </template>           
           </vue-flip>
-          <vue-flip  active-click=""  width="3vw" height="3vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(5)" v-model="flippedRBY" id="anim" class="colorBox colorBox0" horizontal="true">
+          <vue-flip  active-click=""  width="6vw" height="6vw" @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(5)" v-model="flippedRBY" id="anim" class="colorBox colorBox0" horizontal="true">
             <template v-slot:front class="frontBRY">          
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxRBY"></div>
@@ -333,18 +333,39 @@ export default {
      methods:{
 
 
- mouseOver(){
-            // this.active = !this.active;   
-            // this.flipped = !this.flipped
-             this.flipped  = true
+//  mouseOver(){
+//             // this.active = !this.active;   
+//             // this.flipped = !this.flipped
+//              this.flipped  = true
+//             //  this.resetFlip()
         
             
-            // this.buttonClick()
+//             // this.buttonClick()
             
-        },
+//         },
 
 
 animate(){
+
+    var elTitmeName = document.getElementById('titleNameFront');
+  elTitmeName.style.animation = 'none';
+  elTitmeName.offsetHeight; /* trigger reflow */
+  elTitmeName.style.animation = null; 
+
+    var elSousTitre = document.getElementById('sousTitreFront');
+  elSousTitre.style.animation = 'none';
+  elSousTitre.offsetHeight; /* trigger reflow */
+  elSousTitre.style.animation = null; 
+
+     var elTitmeNameBack = document.getElementById('titleNameBack');
+  elTitmeNameBack.style.animation = 'none';
+  elTitmeNameBack.offsetHeight; /* trigger reflow */
+  elTitmeNameBack.style.animation = null; 
+
+    var elSousTitreBack = document.getElementById('sousTitreBack');
+  elSousTitreBack.style.animation = 'none';
+  elSousTitreBack.offsetHeight; /* trigger reflow */
+  elSousTitreBack.style.animation = null; 
 
 
   // var elBannier = document.getElementById('bannierDeep');
@@ -366,6 +387,8 @@ animate(){
   elLittleBox.style.animation = 'none';
   elLittleBox.offsetHeight; /* trigger reflow */
   elLittleBox.style.animation = null; 
+
+  
   
 
 },
@@ -404,12 +427,14 @@ changeBodyBg(value){
             
           //       console.log(this.flipped)
           //  }
+          
           this.resetFlip()
         
  },
 
  resetFlip(){
      if(this.flipped){
+       
              this.flipped == false
               // this.unflip()
             
@@ -479,15 +504,18 @@ changeBodyBg(value){
       // console.log(valeur)
        this.myFunction(count)
        this.flip()
-       this.flipBannier()
+      //  this.flipBannier()
       },
 
-flipBannier(){
+// flipBannier(){
 
-  let content = document.getElementById('bannierDeep').click();
-   content.toggleClass('active');
+//   // let content = document.getElementById('bannierDeep').click();
+//   //  content.toggleClass('active');
+//    let content = document.getElementById('bannier').click();
+//    content.toggleClass('active');
+  
 
-},
+// },
 
       myFunction(count) {
         // var color = ["#3b609b", "#9b3b3b", "#3b9b81", "#7da5a4"];
@@ -543,7 +571,7 @@ flipBannier(){
   color: #2c3e50;
   /* margin-top: 60px; 
 } */
-.frontEx{
+/* .frontEx{
   width: 3vw;
   height: 3vw;
   background-color: royalblue;
@@ -552,19 +580,19 @@ flipBannier(){
   width: 3vw;
   height: 3vw;
   background-color: red;
-}
+} */
 
 .containerBox{
   display: flex;
   justify-content: space-around;
-   margin-left: 15vw;
-  margin-right: 15vw;
+   margin-left: 5vw;
+  margin-right: 5vw;
   
 }
 
 .colorBox{
-  width: 3vw;
-  height: 3vw;
+  /* width: 3vw;
+  height: 3vw; */
   border: solid 0.1vw black;
  
   /* margin-left: 3vw;
@@ -575,11 +603,11 @@ flipBannier(){
 }
 
 .miniBoxFront{
-  width: 3vw;
-  height: 3vw;
+  width: 6vw;
+  height: 6vw;
   display: grid;
-  grid-template-columns: 0.91vw 0.66vw 0.25vw 0.91vw 0.25vw;
-  grid-template-rows: 0.45vw 0.55vw 0.5vw 1vw 0.5vw;
+   grid-template-columns: 30.3% 22% 8.3% 30.3% 8.3%;
+  grid-template-rows: 15% 18.3% 16.6% 33% 16.6%;
   /* transform: rotateX(0deg) rotateY(0deg); */
   background-color: white;
   
@@ -757,16 +785,16 @@ border: 0.2vw solid black;
   /* transform: rotateX(180deg) rotateY(180deg); */
 /* }  */
 .miniBoxBack{
-   width: 3vw;
-  height: 3vw;
+   width: 6vw;
+  height: 6vw;
   display: grid;
-  grid-template-columns: 0.91vw 0.66vw 0.25vw 0.91vw 0.25vw;
-  grid-template-rows: 0.45vw 0.55vw 0.5vw 1vw 0.5vw;
+  grid-template-columns: 30.3% 22% 8.3% 30.3% 8.3%;
+  grid-template-rows: 15% 18.3% 16.6% 33% 16.6%;
   transform: rotateX(180deg) rotateY(180deg);
   background-color: white;
 }
 
-.front2{
+/* .front2{
   width: 3vw;
   height: 3vw;
   background-color: blue;
@@ -775,7 +803,7 @@ border: 0.2vw solid black;
   background-color: red;
    width: 3vw;
   height: 3vw;
-}
+} */
 
  .miniSide0{
    
@@ -892,7 +920,7 @@ background-color:red;
   height: 12.36vw;
   border: solid 1vw black;
   background-color: yellow;
-  transform: translate(-5vw, 5vw);
+  transform: translate(-5vw, 5.2vw);
    animation-duration: 1.5s;
   animation-timing-function: ease-out; 
   animation-name: slideRL;
@@ -1099,9 +1127,27 @@ background-color:red;
   font-size: 5vw;
   text-shadow: .1vw .1vw .5vw black;
   
-  animation-duration: 3s;
+  animation-duration: 2.5s;
   animation-timing-function: ease-in-out; 
-  animation-name: slideRL;
+  animation-name: slideRLText;
+}
+
+@keyframes slideRLText {
+  from {
+    margin-left: 100vw;
+    width: 100%;
+      transform: rotateX(0deg);
+  }
+  30%{
+    transform: rotateX(180deg);
+  }
+
+  to {
+
+    margin-left: 0vw;
+    width: 100%;
+    transform: rotateX(360deg);
+  }
 }
 @keyframes slideRL {
   from {
@@ -1110,8 +1156,10 @@ background-color:red;
   }
 
   to {
+
     margin-left: 0vw;
     width: 100%;
+   
   }
 }
   
@@ -1121,10 +1169,40 @@ background-color:red;
   margin-top: -4.5vw;
   font-size: 2.5vw;
   text-shadow:5px 5px 10px black;
-  animation-duration: 3s;
+ 
+  animation-duration: 2.75s;
   animation-timing-function: ease-in-out;
-  animation-name: slideLR;
+  animation-name: slideLRText;
 }
+@keyframes slideLRText {
+  from {
+    opacity: 0;
+    margin-left: -105vw;
+    width: 100%;
+      transform: rotateX(0deg);
+  }
+  30%{
+     opacity: 0;
+    /* margin-left: -105vw;
+    width: 100%; */
+      transform: rotateX(0deg);
+
+  }
+  49%{
+    opacity: 0;
+      transform: rotateX(180deg);
+  }
+  50%{
+    opacity: 1;
+  }
+
+  to {
+    margin-left: 0vw;
+    width: 100%;
+      transform: rotateX(360deg);
+  }
+}
+
 @keyframes slideLR {
   from {
     opacity: 0;
