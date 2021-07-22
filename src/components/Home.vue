@@ -25,29 +25,68 @@
       <vue-flip active-click="" v-model="flipped"  @mouseover="mouseOver" v-on:click="buttonClick()"  id="side" class="box-2">
           <template v-slot:front class="">
         
-            <div class="i1">Front</div>
+            <div class="i1">
+         
+
+      <img class="icoHtmlCssJs" src="../images/html52001.png">
+       <img class="icoHtmlCssJs" src="../images/css32400.png">
+        <img class="icoHtmlCssJs" src="../images/js.png">
+ 
+      <img class="icoBootstrap icoBootstrapMarginLeft" src="../images/bootstrap.png">
+      <img class="icoBootstrap" src="../images/vuejs.png">
+      <img class="icoNode" src="../images/node.png">
+
+       <img class="icoMySql" src="../images/mysql.png">
+         
+        
+      <img class="icoDB" src="../images/mongoDB.png">
+          
+       
+      <img class="icoSeo" src="../images/seo.png">
+   
+     
+            </div>
+            
           </template>
           <template v-slot:back class="">
+
          
-            <span>
-             <div class="i2">back</div>
-            </span>
+        
+            <div class="i1">
+         
+
+      <img class="icoHtmlCssJs" src="../images/html52001.png">
+       <img class="icoHtmlCssJs" src="../images/css32400.png">
+        <img class="icoHtmlCssJs" src="../images/js.png">
+ 
+      <img class="icoBootstrap icoBootstrapMarginLeft" src="../images/bootstrap.png">
+      <img class="icoBootstrap" src="../images/vuejs.png">
+      <img class="icoNode" src="../images/node.png">
+
+       <img class="icoMySql" src="../images/mysql.png">
+         
+        
+      <img class="icoDB" src="../images/mongoDB.png">
+          
+       
+      <img class="icoSeo" src="../images/seo.png">
+   
+     
+            </div>
+            
           </template>
           
         </vue-flip>
 
          <!-- <a  @mouseover="buttonClick">  -->
          <vue-flip active-click=""   @mouseover="mouseOver" v-model="flipped" v-on:click="buttonClick()"  id="littleBox" class="boxX">
-          <template v-slot:front class="">
-        
-            <div class=""   @mouseover="mouseOver">Front</div>
-          </template>
-          <template v-slot:back class="">
+            <template v-slot:front class="">
+
          
-            <span>
-             <div class="">back</div>
-            </span>
+        
+          
           </template>
+          
           
         </vue-flip>
         <!-- </a> -->
@@ -164,8 +203,19 @@
       <div class="side_bar"></div>
     </div> -->
     <div class="box-3">
-      <h2> Choose your Mondrian theme </h2>
+         <!-- <div class="containerBoxLogo"> -->
+
+      <!-- <img class="icoHtmlCssJs" src="../images/htmlcssjsCircle.png"> -->
+      <!-- <img class="icoBootstrap icoBootstrapMarginLeft" src="../images/bootstrapS.png">
+      <img class="icoBootstrap" src="../images/vue.png">
+      <img class="icoNode" src="../images/nodejs.png"> -->
+      <!-- <img class="icoMySql" src="../images/mysql.png">
+      <img class="icoDB" src="../images/mongoDB.png">
+      <img class="icoSeo" src="../images/seo.png"> -->
+         <!-- </div> -->
+       <h2 class="mondrianTheme"> Choose your Mondrian theme </h2>
         <div class="containerBox">
+          
           <vue-flip  active-click=""  width="6vw" height="6vw"  @mouseover="mouseOver" v-on:click="animate(),changeBodyBg(0)" v-model="flippedBRY" id="anim" class="colorBox colorBox0" horizontal="true">
             <template v-slot:front class="frontBRY">            
               <div class="miniBoxFront"> 
@@ -581,12 +631,184 @@ changeBodyBg(value){
   height: 3vw;
   background-color: red;
 } */
+.littleBox1stLine{
+   width:20vw;
+  /* margin-top: 15vw; */
+  display: flex;
+  margin-top: -0.5vw;
+  justify-content: space-around;
+   /* margin-left: 1vw; *
+  /* margin-right: 17vw; */
+  
+
+}
+
+.containerBoxLogoSide2ndlineBackLittleBoxTop{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  /* margin-top: -0.5vw;
+  margin-left: -0.45vw; */
+}
+
+.containerBoxLogoSide2ndlineBackLittleBoxMiddle{
+  margin-top: -0.5vw;
+  margin-left: -0vw;
+}
+
+.littleBox2ndLine{
+   width:20vw;
+  /* margin-top: 15vw; */
+  display: flex;
+ 
+  justify-content: space-around;
+   /* margin-left: 1vw; */
+  /* margin-right: 17vw; */
+ 
+
+}
+
+.icoHtmlCssJs{
+  /* position: absolute; */
+  z-index: 1000;
+  margin-top: 1vw;
+  width: 4.5vw;
+  height: 4.5vw;
+  border: solid black 0.2vw;
+  padding: 0.2vw;
+  background-color:white;
+}
+.icoHtmlCssJsCircle{
+
+    z-index: 1000;
+  margin-top: 15vw;
+  margin-left: 3vw;
+  width: 4.5vw;
+  height: 4.5vw;
+
+}
+
+.icoBootstrap{
+   z-index: 1000;
+  margin-top: 1vw;
+  width: 4.5vw;
+  height: 4.5vw;
+  padding: 0.1vw;
+
+   border: solid black 0.2vw;
+  background-color: white;
+
+}
+
+.icoNode{
+   z-index: 1000;
+  margin-top: 1vw;
+  width: 4.5vw;
+  height: 4.5vw;
+  padding: 0.1vw;
+
+   border: solid black 0.2vw;
+  background-color: white;
+
+}
+.icoMySql{
+   z-index: 1000;
+  margin-top: 1vw;
+  width: 6vw;
+  height: 4vw;
+   padding: 0.1vw;
+
+   border: solid black 0.2vw;
+  background-color: white;
+
+}
+.icoSeo{
+   z-index: 1000;
+  margin-top: 1vw;
+  width: 7vw;
+  height: 4vw;
+    padding: 0.1vw;
+
+   border: solid black 0.2vw;
+  background-color: white;
+
+}
+.mondrianTheme{
+  margin-top: 1vw;
+}
+
+.icoBootstrapMarginLeft{
+  margin-left: -0vw;
+}
+/* .icoNode{
+    z-index: 1000;
+  margin-top: 1vw;
+  width: 6.5vw;
+  height: 4.5vw;
+} */
+.icoDB{
+   z-index: 1000;
+  margin-top: 1vw;
+  width: 9vw;
+  height: 4vw;
+    padding: 0.1vw;
+
+   border: solid black 0.2vw;
+  background-color: white;
+
+}
 
 .containerBox{
   display: flex;
   justify-content: space-around;
    margin-left: 5vw;
   margin-right: 5vw;
+  /* margin-top: -2vw; */
+  
+}
+.containerBoxLogo{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+   margin-left: 1vw;
+  margin-right: 17vw;
+  
+  
+}
+.containerBoxLogoSide{
+  width:20vw;
+  margin-top: 15.5vw;
+  display: flex;
+  /* padding-left: 1vw; */
+  /* padding-right: 1vw; */
+  
+  justify-content: space-around;
+   /* margin-left: 1vw; */
+  /* margin-right: 17vw; */
+  
+  
+}
+.containerBoxLogoSide2ndlineBack{
+  width:20vw;
+  margin-top: 1vw;
+  display: flex;
+ 
+  justify-content: space-around;
+   /* margin-left: 1vw; */
+  /* margin-right: 17vw; */
+  
+  
+}
+
+.containerBoxLogoSide2ndline{
+  width:20vw;
+  /* margin-top: vw; */
+  display: flex;
+ 
+  justify-content: space-around;
+   /* margin-left: 1vw; */
+  /* margin-right: 17vw; */
+  
   
 }
 
@@ -851,6 +1073,7 @@ background-color:red;
  }
 
 .box-2{
+  align-content: center;
   border: 1vw solid black;
   
   background-color:darkblue; 
@@ -865,6 +1088,16 @@ background-color:red;
  position: relative;
   width: 18vw;
   height: 100vw;
+  /* background-color: red; */
+}
+.i1{
+  display: flex;
+  flex-wrap: wrap;
+ position: relative;
+ margin-top: 15vw;
+  width: 18vw;
+  height: 9vw;
+  justify-content: space-around;
   /* background-color: red; */
 }
 @keyframes slideBT {
@@ -968,7 +1201,7 @@ background-color:red;
 }
 
 .box-3{
-  
+  text-align: center;
   border-right: 1vw solid black;;
   background-color:white;
   grid-column: 2/3;
@@ -985,8 +1218,17 @@ background-color:red;
     border-top: 1vw solid black;
    
   }
-  94%{
+  95%{
     border-top: 1vw solid black;
+  }
+   97.5%{
+    border-top: 0.75vw solid black;
+  }
+   98.5%{
+    border-top: 0.5vw solid black;
+  }
+   99.5%{
+    border-top: 0.25vw solid black;
   }
   to {
      margin-top: 0vw; 
@@ -1055,6 +1297,9 @@ background-color:red;
     background-color: black;
     /* transform: skew(90deg, 20deg); */
    
+  }
+   66%{
+    background-color: black;
   }
    /* 50%{
        transform: rotate3d(1, 2, -1, 180deg);
