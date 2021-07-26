@@ -9,20 +9,21 @@
        <li class="">
       <router-link to="/home" class="navbar-brand">Home</router-link>
        </li>
-      <div class="navbar-nav mr-auto">
+      <!-- <div class="navbar-nav mr-auto"> -->
         <li class="nav-item">
-          <router-link to="/tutorials" class="nav-link">Tutorials</router-link>
+          <router-link to="/tutorials" class="nav-link">Mes projets</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/add" class="nav-link">Add</router-link>
+          <router-link to="/add" class="nav-link">Mon parcours</router-link>
         </li>
-         <li class="nav-item">
+         <!-- <li class="nav-item">
           <router-link to="/tutorials-list" class="nav-link">TutorialsList</router-link>
-        </li>
-      </div>
+        </li> -->
+      <!-- </div> -->
     </nav>
+    <!-- <div class="blueBox"></div> -->
    
-      <vue-flip active-click="" v-model="flipped"  @mouseover="mouseOver" v-on:click="buttonClick()"  id="side" class="box-2">
+      <vue-flip active-click=""  width: height: v-model="flipped"   v-on:click="buttonClick()"  id="side" class="box-2">
           <template v-slot:front class="">
         
             <div class="i1">
@@ -79,7 +80,7 @@
         </vue-flip>
 
          <!-- <a  @mouseover="buttonClick">  -->
-         <vue-flip active-click=""   @mouseover="mouseOver" v-model="flipped" v-on:click="buttonClick()"  id="littleBox" class="boxX">
+         <vue-flip active-click=""  width: height:  v-model="flipped" v-on:click="buttonClick()"  id="littleBox" class="boxX">
             <template v-slot:front class="">
 
          
@@ -137,7 +138,7 @@
 
 
 
-             <vue-flip  active-click=""    @mouseover="mouseOver" width="100vw" height="8vw" v-on:click="buttonClick()" v-model="flipped" id="bannier" class="box-1" horizontal="true">
+             <vue-flip  active-click=""    v-on:click="buttonClick()" v-model="flipped" id="bannier" class="box-1" horizontal=true>
           <template v-slot:front class="front">
              <!-- <div class="title_bar">-->
          <div class="title_container"> 
@@ -215,8 +216,8 @@
          <!-- </div> -->
        <h2 class="mondrianTheme"> Choose your Mondrian theme </h2>
         <div class="containerBox">
-          
-          <vue-flip  active-click=""  width="6vw" height="6vw"  @mouseover="mouseOver" v-on:click="animate(),changeBodyBg(0)" v-model="flippedBRY" id="anim" class="colorBox colorBox0" horizontal="true">
+       
+          <vue-flip  active-click=""  width="6vw" height="6vw"   v-on:click="animate(),changeBodyBg(0)" v-model="flippedBRY" class="colorBox colorBox0" horizontal=true>
             <template v-slot:front class="frontBRY">            
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxBRY"></div>
@@ -232,7 +233,7 @@
               </div>  
             </template>           
           </vue-flip>
-          <vue-flip  active-click=""  width="6vw" height="6vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(1)" v-model="flippedYBR" id="anim" class="colorBox colorBox0" horizontal="true">
+          <vue-flip  active-click=""  width="6vw" height="6vw"  v-on:click="animate(), changeBodyBg(1)" v-model="flippedYBR"  class="colorBox colorBox0" horizontal=true>
             <template v-slot:front class="backBRY">         
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxYBR"></div>
@@ -248,7 +249,8 @@
              </div>  
             </template>           
           </vue-flip>
-          <vue-flip  active-click=""  width="6vw" height="6vw" @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(2)" v-model="flippedRYB" id="anim" class="colorBox colorBox0" horizontal="true">
+      
+          <vue-flip  active-click=""  width="6vw" height="6vw"  v-on:click="animate(), changeBodyBg(2)" v-model="flippedRYB" class="colorBox colorBox0" horizontal=true>
             <template v-slot:front class="frontBRY">          
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxRYB"></div>
@@ -264,7 +266,7 @@
               </div>  
             </template>           
           </vue-flip>
-          <vue-flip  active-click=""  width="6vw" height="6vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(3)" v-model="flippedBYR" id="anim" class="colorBox colorBox0" horizontal="true">
+          <vue-flip  active-click=""  width="6vw" height="6vw" v-on:click="animate(), changeBodyBg(3)" v-model="flippedBYR" class="colorBox colorBox0" horizontal=true>
             <template v-slot:front class="frontBRY">            
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxBYR"></div>
@@ -280,7 +282,7 @@
               </div>  
             </template>           
           </vue-flip>
-          <vue-flip  active-click=""  width="6vw" height="6vw"  @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(4)" v-model="flippedYRB" id="anim" class="colorBox colorBox0" horizontal="true">
+          <vue-flip  active-click=""  width="6vw" height="6vw"   v-on:click="animate(), changeBodyBg(4)" v-model="flippedYRB"  class="colorBox colorBox0" horizontal=true>
             <template v-slot:front class="frontBRY">         
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxYRB"></div>
@@ -296,7 +298,7 @@
               </div>  
             </template>           
           </vue-flip>
-          <vue-flip  active-click=""  width="6vw" height="6vw" @mouseover="mouseOver" v-on:click="animate(), changeBodyBg(5)" v-model="flippedRBY" id="anim" class="colorBox colorBox0" horizontal="true">
+          <vue-flip  active-click=""  width="6vw" height="6vw" v-on:click="animate(), changeBodyBg(5)" v-model="flippedRBY" class="colorBox colorBox0" horizontal=true>
             <template v-slot:front class="frontBRY">          
               <div class="miniBoxFront"> 
                 <div class="miniLittleBoxRBY"></div>
@@ -815,7 +817,7 @@ changeBodyBg(value){
 .colorBox{
   /* width: 3vw;
   height: 3vw; */
-  border: solid 0.1vw black;
+  border: solid 0.175vw black;
  
   /* margin-left: 3vw;
   margin-right: 3vw; */
@@ -1078,7 +1080,7 @@ background-color:red;
   
   background-color:darkblue; 
   grid-column: 1/2;
-  grid-row: 3/4;
+  grid-row: 1/4;
   animation-duration: 1.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards; 
@@ -1094,7 +1096,7 @@ background-color:red;
   display: flex;
   flex-wrap: wrap;
  position: relative;
- margin-top: 15vw;
+ margin-top: 17vw;
   width: 18vw;
   height: 9vw;
   justify-content: space-around;
@@ -1107,7 +1109,7 @@ background-color:red;
   }
  
   to {
-     margin-top: -15vw; 
+     margin-top: -0vw; 
   
   }
 }
@@ -1136,14 +1138,47 @@ background-color:red;
   grid-row: 3/4;
    
  }
+
+nav a{
+ 
+ text-decoration: unset;
+ font-size: 1.2vw;
+ color: black;
+ font-weight: bold;
+ }
+nav li{
+   list-style-type: none;
+  margin-right: 3vw;
+}
+
 .navbar1{
+  /* padding-right: 17vw; */
+  padding-top:1vw ;
+  display: flex;
+  margin: auto;
   /* width: 100vw;*/
   /* height: 5vw; */
+  text-align: space-around;
   background-color:#DCDCDC;
   
   grid-column: 1/4;
   grid-row: 1/2;
+  animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+  animation-timing-function: ease-out; 
+  animation-name: slideRLNav;
 
+}
+@keyframes slideRLNav {
+  from {
+    margin-left: 100vw;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 25vw;
+    width: 100%;
+  }
 }
 .reverse{
   transform: rotateX(180deg) rotateY(180deg);
@@ -1218,18 +1253,22 @@ background-color:red;
     border-top: 1vw solid black;
    
   }
-  95%{
+  92.5%{
     border-top: 1vw solid black;
   }
-   97.5%{
+    /* 96%{
     border-top: 0.75vw solid black;
-  }
-   98.5%{
-    border-top: 0.5vw solid black;
-  }
-   99.5%{
+  }*/
+   97.5%{
     border-top: 0.25vw solid black;
   }
+  /*
+   98%{
+    border-top: 0.25vw solid black;
+  }
+   99.5%{
+    border-top: 0.1vw solid black; 
+  /* } */
   to {
      margin-top: 0vw; 
      /* border-top: unset; */
@@ -1486,7 +1525,7 @@ background-color:red;
 .box {
 
 width: 100vw;
-height: 8vw;
+height:18vw;
 /* border: solid 1vw black; */
 background-color: white;
 /* border: 1px solid #eeeeee; */
@@ -1547,6 +1586,172 @@ transform: rotateX(180deg);
    grid-column: 1/4;
    grid-row: 4/5;
 } 
+
+@media screen and (max-width: 767px)
+{
+
+/* .blueBox{
+   grid-column: 1/2;
+   grid-row: 1/2;
+   background-color: darkblue;
+   border-right: 1vw solid black;
+    border-left: 1vw solid black;
+
+} */
+
+    .container{
+  display: grid;
+  grid-template-columns: [first] 15vw [line2] 80vw [line3] 5vw [end];
+  grid-template-rows: [row1-start] 5vw [row1-end] 20vw [third-line] 100vw [third-line] 5vw [last-line];
+  overflow: hidden;
+ }
+#bannier{
+  width: 100vw;
+  height: 20vw;
+}
+.box-2{
+  padding-top: 30vw;
+  align-content: center;
+  border: 1vw solid black;
+  margin-top: 0vw;
+  background-color:darkblue; 
+  grid-column: 1/2;
+  grid-row: 1/4;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideBT;
+}
+@keyframes slideBT {
+  from {
+    margin-top: 100vw;
+   
+  }
+ 
+  to {
+     margin-top: -0vw; 
+  
+  }
+}
+.title_box{
+  width: 60vw;
+  height: 8vw;
+  text-align: right;
+
+}
+
+
+
+.title_box{
+  width:100vw;
+  height: 20vw;
+  margin-right:20vw;
+}
+.title_name{
+  margin-top: 1vw;
+  margin-right: 20vw;
+  font-size: 10.25vw;
+}
+.sousTitre{
+  margin-right: 20vw;
+  font-size: 5.25vw;
+  margin-top: -9vw;
+}
+.back{
+  padding-bottom: 12vw;
+}
+@keyframes slideRLText {
+  from {
+    margin-left: 100vw;
+    width: 100%;
+      transform: rotateX(0deg);
+  }
+  30%{
+    transform: rotateX(180deg);
+  }
+
+  to {
+
+    margin-left: -20vw;
+    width: 100%;
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes slideLRText {
+  from {
+    opacity: 0;
+    margin-left: -105vw;
+    width: 100%;
+      transform: rotateX(0deg);
+  }
+  30%{
+     opacity: 0;
+    /* margin-left: -105vw;
+    width: 100%; */
+      transform: rotateX(0deg);
+
+  }
+  49%{
+    opacity: 0;
+      transform: rotateX(180deg);
+  }
+  50%{
+    opacity: 1;
+  }
+
+  to {
+    margin-left: -20vw;
+    width: 100%;
+      transform: rotateX(360deg);
+  }
+}
+
+.i1{
+  display: flex;
+  flex-wrap:wrap;
+  padding-top: 20vw;
+  margin: auto;
+  padding-top: 5vw;
+  height: 30vw;
+  width: 13vw;
+  
+}
+.boxX{
+  width: 12.36vw;
+  height: 20vw;
+   transform: translate(-10vw, 5.2vw);
+     animation-duration: 1.5s;
+  animation-timing-function: ease-out; 
+  animation-name: slideRL767;
+}
+/* .boxX{
+  width: 20vw;
+  height: 12.36vw;
+  border: solid 1vw black;
+  background-color: yellow;
+  transform: translate(-5vw, 5.2vw);
+   animation-duration: 1.5s;
+  animation-timing-function: ease-out; 
+  animation-name: slideRL;
+} */
+@keyframes slideRL767 {
+  from {
+    margin-left: 100vw;
+    width: 12.36vw;
+  }
+
+  to {
+    margin-left: -0vw;
+    width: 12.36vw;
+  }
+}
+
+
+}
+
+
+
 </style>
 
 
