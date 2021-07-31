@@ -5,7 +5,7 @@
      <h1>{{ msg }}</h1>
      
         <li class="nav-item">
-          <router-link to="/tutorials" class="nav-link">Mes projets</router-link>
+          <router-link to="/tutorials" class="nav-link">Réalisations</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/add" class="nav-link">Mon parcours</router-link>
@@ -371,21 +371,27 @@
       
         
       <div class="container2">
-        <h2 class="mesProjets">Mes projets</h2>
-       <router-link to="/tutorials" class="">
-      <div class="window window-1"><h2>Le coin de Titi</h2><p>Un réseau social d'entreprise, simple et facile à utiliser</p><p>Cliquez pour visiter l"application</p></div>
+        <h2 class="mesProjets">Mes réalisations</h2>
+       <router-link to="/tutorials" class="nofill">
+     
+      <div class="window window-1" ><img src="../images/leCoinDeTiti.png" class="imgProjet">  <div class="vignette"></div><div class="vignetteTexte"><h2 class="nofill">Le coin de Titi</h2><p  class="nofill">Un réseau social d'entreprise, simple et facile à utiliser</p><p  class="nofill">Cliquez pour visiter l"application</p></div></div>
       </router-link>
-        <router-link to="/tutorials" class="">
-      <div class="window window-2"><h2>Teddies, les petits oursons</h2><p>Site e-commerce de ventes d'oursons en peluche</p><p>Cliquez pour visiter l"application</p></div>
+        <router-link to="/tutorials" class="nofill">
+      <div class="window window-2"><img src="../images/teddies2.png" class="imgProjet"> <div class="vignette"></div><div class="vignetteTexte"><h2 class="nofill">Teddies les petits oursons</h2><p  class="nofill">Site e-commerce de ventes d'oursons en peluche</p><p  class="nofill">Cliquez pour visiter l"application</p></div></div>
       </router-link>
-       <router-link to="/tutorials" class="">
-      <div class="window window-2"><h2>La Chouette agence</h2><p>Optimisation d'un site déjà existant</p><p>Cliquez pour visiter l"application</p></div>
+       <router-link to="/tutorials" class="nofill">
+      <div class="window window-2"><img src="../images/laChouette.png" class="imgProjet"> 
+      <div class="vignette"></div><div class="vignetteTexte"><h2  class="nofill">La Chouette agence</h2><p  class="nofill">Optimisation d'un site déjà existant</p><p  class="nofill">Cliquez pour visiter l"application</p></div></div>
       </router-link>
-      <router-link to="/tutorials" class="">
-      <div class="window window-2"><h2>Ohmyfood</h2><p>Dynamisation d'une application d'avis gastronomique</p><p>Cliquez pour visiter l"application</p></div>
+      <router-link to="/tutorials" class="nofill">
+      <div class="window window-2"><img src="../images/ohMyFood.png" class="imgProjet">
+         <div class="vignette"></div><div class="vignetteTexte"><h2  class="nofill">Ohmyfood</h2><p  class="nofill">Dynamisation d'une application d'avis gastronomique</p><p  class="nofill">Cliquez pour visiter l"application</p></div></div>
+      <!-- <h2>Ohmyfood</h2><p>Dynamisation d'une application d'avis gastronomique</p><p>Cliquez pour visiter l"application</p></div> -->
       </router-link>
-      <router-link to="/tutorials" class="">
-      <div class="window window-2"><h2>Reservia</h2><p>Création d'une maquette d'un site de réservation d'hébergements</p><p>Cliquez pour visiter l"application</p></div>
+      <router-link to="/tutorials" class="nofill">
+      <div class="window window-2"><img src="../images/reservia4.png" class="imgProjet">
+       <div class="vignette"></div><div class="vignetteTexte"><h2  class="nofill">Reservia</h2><p  class="nofill">Création d'une maquette d'un site de réservation d'hébergements</p><p  class="nofill">Cliquez pour visiter l"application</p></div></div>
+      <!-- <h2>Reservia</h2><p>Création d'une maquette d'un site de réservation d'hébergements</p><p>Cliquez pour visiter l"application</p></div> -->
       </router-link>
           </div>
 
@@ -709,6 +715,31 @@ changeBodyBg(value){
   background-color: red;
 } */
 
+.vignette{
+  width: 100%;
+  height: 30%;
+  opacity:0.9;
+  background:black;
+   transform: translate(0px, -110px);
+}
+.vignetteTexte{
+   transform: translate(0px, -235px);
+   text-decoration: unset;
+   color: white;
+   
+}
+.nofill{
+text-decoration: unset;
+}
+/* .vignette h2{
+  opacity: 1;
+} */
+
+.imgProjet{
+   height: 100%;
+   width: 100%;
+  object-fit: cover;
+}
 
   .navbar1 .nav-link{
     /* margin-left: -75px; */
@@ -1415,10 +1446,12 @@ nav li{
 
 .window{
   /* margin-top: 15vw;  */
-  height: 391.84px;
-  /* width: 750px; */
+  /* height: 391.84px;  */
+  height: 100%;
+  width: 100%; 
+  
   /* font-size: 1.25vw; */
-}
+} 
 .window p{
   /* margin-top: 3.25vw; */
   /* font-size: 5vw; */
@@ -1452,7 +1485,9 @@ nav li{
 .window{
 /* font-size: 9vw; */
  /* perspective: 200px; */
+ box-sizing: border-box;
  border: solid 1.05vw black;
+
  /* box-shadow: 1vw 1vw 1vw black; */
  border-radius: 0.1vw;
   transform: perspective(0vw) rotateX(90deg);
@@ -2204,14 +2239,16 @@ transform: rotateX(180deg);
   height: 195px;
 }
 .window{
-  width: 336px;
+  /* width: 336px; */
+  width: 100%;
+  height: 100%;
 }
 .container2{
   /* margin-top: 5vw; */
   
   display: grid;
   grid-template-columns: 345px ;
-  grid-template-rows: 28px 286.77px  286.77px  286.77px  286.77px  286.77px auto;
+  grid-template-rows: 28px 213.22px  213.22px  213.22px  213.22px  213.22px auto;
   grid-row-gap: 7vw;
    /* grid-row-gap: 50px; */
 
@@ -2638,8 +2675,8 @@ display: none;
 
 
   .window{
-  width: 64vw;
-  height: 62.75vw;
+  width: 100%;
+  height: 100%;
   border-left: unset;
   border-right: unset;
 }
@@ -2648,7 +2685,7 @@ display: none;
   
   display: grid;
   grid-template-columns: 64vw ;
-  grid-template-rows: 5vw 64vw 64vw 64vw 64vw 64vw auto;
+  grid-template-rows: 5vw 39.55vw 39.55vw 39.55vw 39.55vw 39.55vw auto;
   grid-row-gap: 7vw;
    /* grid-row-gap: 50px; */
 
