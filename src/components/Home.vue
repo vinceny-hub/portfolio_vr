@@ -720,12 +720,15 @@ changeBodyBg(value){
   height: 30%;
   opacity:0.9;
   background:black;
-   transform: translate(0px, -110px);
+   transform: translate(0px, -100px);
+ 
 }
 .vignetteTexte{
    transform: translate(0px, -235px);
    text-decoration: unset;
    color: white;
+   padding-top: 2px;
+   padding-bottom: 2px;
    
 }
 .nofill{
@@ -1449,6 +1452,7 @@ nav li{
   /* height: 391.84px;  */
   height: 100%;
   width: 100%; 
+  overflow: hidden;
   
   /* font-size: 1.25vw; */
 } 
@@ -1892,6 +1896,21 @@ transform: rotateX(180deg);
   margin-top: 1vw;
   font-size: 2.5vw;
 } */
+.vignette{
+  width: 100%;
+  height: 30%;
+  opacity:0.9;
+  background:black;
+   transform: translate(0px, -80px);
+}
+.vignetteTexte{
+   transform: translate(0px, -235px);
+   text-decoration: unset;
+   color: white;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   
+}
 
 .boxX{
   width: 12.36vw;
@@ -2174,7 +2193,21 @@ transform: rotateX(180deg);
 
 @media screen and (max-width: 767px)
 {
-
+.vignette{
+  width: 100%;
+  height: 30%;
+  opacity:0.9;
+  background:black;
+   transform: translate(0px, -60px);
+}
+.vignetteTexte{
+   transform: translate(0px, -235px);
+   text-decoration: unset;
+   color: white;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   
+}
  
   /* .container{
   display: grid;
@@ -2662,6 +2695,25 @@ display: none;
 @media screen and (max-width: 541px)
 
 {
+
+  .vignette{
+  width: 100%;
+  height: 30%;
+  opacity:0.9;
+  background:black;
+   transform: translate(0px, -11vw);
+}
+.vignetteTexte{
+   transform: translate(0px, -23.75vw);
+   text-decoration: unset;
+   color: white;
+   padding-top: 2px;
+   padding-bottom: 2px;
+   
+}
+.vignetteTexte p{
+  display: none;
+}
 .navbar1 .nav-link:hover{
   padding-top: 2vw;
 }
