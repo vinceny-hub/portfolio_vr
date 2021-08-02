@@ -4,7 +4,7 @@
     <nav class="navbar1" v-on:click="buttonClick()">
      <h1>{{ msg }}</h1>
      
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link to="/tutorials" class="nav-link">Réalisations</router-link>
         </li>
         <li class="nav-item">
@@ -12,6 +12,15 @@
         </li>
          <li class="nav-item">
           <router-link to="/tutorials-list" class="nav-link">Contact</router-link>
+        </li> -->
+         <li class="nav-item">
+          <a href="#realisations" class="nav-link">Réalisations</a>
+        </li>
+        <li class="nav-item">
+          <a  href="#monParcours" class="nav-link">Mon parcours</a>
+        </li>
+         <li class="nav-item">
+          <a   href="#meContacter" class="nav-link">Contact</a>
         </li>
       <!-- </div> -->
     </nav>
@@ -134,31 +143,48 @@
 
 
 
-             <div  active-click=""    v-on:click="buttonClick()" id="bannier" class="box-1" horizontal=true>
-          <!-- <template v-slot:front class="front"> -->
+             <!-- <div  active-click=""    v-on:click="buttonClick()" id="bannier" class="box-1" horizontal=true>
+        
             <div class="front"> 
-             <!-- <div class="title_bar">-->
+           
          <div class="title_container"> 
               <div class="title_box"> 
               <h1 class="title_name" id="titleNameFront">Vincent Robert</h1>
               <h2 class="sousTitre" id="sousTitreFront">Développeur Web</h2>
               </div>
-         <!-- </div>-->
+      
              </div> 
-          </div>
-          <!-- <template v-slot:back class="back">
-             
+          </div>         
+        </div> -->
+
+        
+             <vue-flip  active-click=""  v-model="flipped"  v-on:click="buttonClick()" id="bannier" class="box-1" horizontal=true>
+          <template v-slot:front class="front">
+        
          <div class="title_container"> 
-         <div class="reverse back">
-             <div class="title_box"> 
-                <h1 class="title_name"  id="titleNameBack">Vincent Robert</h1>
-           <h2 class="sousTitre"  id="sousTitreBack">Développeur Web</h2>
+              <div class="title_box"> 
+              <h1 class="title_name" id="titleNameFront">Vincent Robert</h1>
+              <h2 class="sousTitre" id="sousTitreFront">Développeur Web</h2>
+              </div>
        
-             </div>
-         </div> 
-         </div>
-          </template> -->
-        </div>
+             </div> 
+          </template>
+          <template v-slot:back class="back">
+             
+        
+       
+                <div class="title_containerBack reverse"> 
+              <div class="title_box "> 
+                <!-- <div class="reverse"> -->
+              <h1 class="title_name" id="titleNameFront">Vincent Robert</h1>
+              <h2 class="sousTitre" id="sousTitreFront">Développeur Web</h2>
+                <!-- </div> -->
+              </div>
+       
+             </div> 
+             <!-- </div>  -->
+          </template>
+             </vue-flip>
 
 
           <!-- <div v-on:click="buttonClick()" v-bind="flipped" id="bannier" class="box-1" horizontal="true">  -->
@@ -371,38 +397,41 @@
       
         
       <div class="container2">
-        <h2 class="mesProjets">Mes réalisations</h2>
-       <router-link to="/tutorials" class="nofill">
+        <h2 id="realisations" class="mesProjets">Mes réalisations</h2>
+         <a href="https://crud-social-network.herokuapp.com" class="nofill">
      
-      <div class="window window-1" ><img src="../images/leCoinDeTiti.png" class="imgProjet">  <div class="vignette"></div><div class="vignetteTexte"><h2 class="nofill">Le coin de Titi</h2><p  class="nofill">Un réseau social d'entreprise, simple et facile à utiliser</p><p  class="nofill">Cliquez pour visiter l"application</p></div></div>
-      </router-link>
-        <router-link to="/tutorials" class="nofill">
-      <div class="window window-2"><img src="../images/teddies2.png" class="imgProjet"> <div class="vignette"></div><div class="vignetteTexte"><h2 class="nofill">Teddies les petits oursons</h2><p  class="nofill">Site e-commerce de ventes d'oursons en peluche</p><p  class="nofill">Cliquez pour visiter l"application</p></div></div>
-      </router-link>
-       <router-link to="/tutorials" class="nofill">
+      <div  class="window window-1" ><img src="../images/leCoinDeTiti.png" class="imgProjet">  <div class="vignette"></div><div class="vignetteTexte "><h2 class="nofill">Le coin de Titi</h2><p  class="nofill sousTitreVignette">Un réseau social d'entreprise, simple et facile à utiliser</p><p  class="nofill cliquez">Cliquez pour visiter l'application</p></div></div>
+      </a>
+         <a href="https://vinceny-hub.github.io/-VincentRobert_5_25-01-2021-/index.html" class="nofill">
+      <div class="window window-2"><img src="../images/teddies2.png" class="imgProjet"> <div class="vignette"></div><div class="vignetteTexte"><h2 class="nofill">Teddies les petits oursons</h2><p  class="nofill sousTitreVignette">Site e-commerce de ventes d'oursons en peluche</p><p  class="nofill cliquez">Cliquez pour visiter l'application</p></div></div>
+      </a>
+        <a href="https://vinceny-hub.github.io/VincentRobert_4_06-12-2020/" class="nofill">
       <div class="window window-2"><img src="../images/laChouette.png" class="imgProjet"> 
-      <div class="vignette"></div><div class="vignetteTexte"><h2  class="nofill">La Chouette agence</h2><p  class="nofill">Optimisation d'un site déjà existant</p><p  class="nofill">Cliquez pour visiter l"application</p></div></div>
-      </router-link>
-      <router-link to="/tutorials" class="nofill">
+      <div class="vignette"></div><div class="vignetteTexte"><h2  class="nofill">La Chouette agence</h2><p  class="nofill sousTitreVignette">Optimisation d'un site déjà existant</p><p  class="nofill cliquez">Cliquez pour visiter l'application</p></div></div>
+      </a>
+        <a href="https://vinceny-hub.github.io/VincentRobert_3_09-11-2020.-/" class="nofill">
       <div class="window window-2"><img src="../images/ohMyFood.png" class="imgProjet">
-         <div class="vignette"></div><div class="vignetteTexte"><h2  class="nofill">Ohmyfood</h2><p  class="nofill">Dynamisation d'une application d'avis gastronomique</p><p  class="nofill">Cliquez pour visiter l"application</p></div></div>
+         <div class="vignette"></div><div class="vignetteTexte"><h2  class="nofill">Ohmyfood</h2><p  class="nofill sousTitreVignette">Dynamisation d'une application d'avis gastronomique</p><p  class="nofill cliquez">Cliquez pour visiter l'application</p></div></div>
       <!-- <h2>Ohmyfood</h2><p>Dynamisation d'une application d'avis gastronomique</p><p>Cliquez pour visiter l"application</p></div> -->
-      </router-link>
-      <router-link to="/tutorials" class="nofill">
+      </a>
+       <a href="https://vinceny-hub.github.io/VincentRobert_2_10-10-2020./" class="nofill">
       <div class="window window-2"><img src="../images/reservia4.png" class="imgProjet">
-       <div class="vignette"></div><div class="vignetteTexte"><h2  class="nofill">Reservia</h2><p  class="nofill">Création d'une maquette d'un site de réservation d'hébergements</p><p  class="nofill">Cliquez pour visiter l"application</p></div></div>
+       <div class="vignette"></div><div class="vignetteTexte"><h2  class="nofill">Reservia</h2><p  class="nofill sousTitreVignette">Création d'une maquette d'un site de réservation</p><p  class="nofill cliquez">Cliquez pour visiter l'application</p></div></div>
       <!-- <h2>Reservia</h2><p>Création d'une maquette d'un site de réservation d'hébergements</p><p>Cliquez pour visiter l"application</p></div> -->
-      </router-link>
+      </a>
           </div>
 
           <div class="container3">
-               <h2 class="">Mon Parcours</h2>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cum autem temporibus exercitationem quis mollitia inventore assumenda nobis numquam similique doloremque aliquam, harum sunt, sapiente sed quidem praesentium iusto eligendi!</p>
+               <h2 id="monParcours" class="">Mon Parcours</h2>
+               <p>Électronicien de formation, et après avoir étudié la physique et les mathématiques à l'université, et ayant voulu avoir une expérience à l'étranger, je me suis retrouvé technicien en électronique dans le Grand Casino de Knokke, en  Belgique Flamande. De là j'ai évolué pour devenir <strong> reponsable technique </strong> du parc machine à sous, et responsable de salle, chargé de l'accueil et de la fidélisation de la clientèle. Puis après cette expérience réussi, j'ai intégré l'entreprise <strong> DRGT online</strong>, toujours en <strong> Belgique</strong>, dans laquelle je travaillais en tant que <strong> slot enginner </strong> pour l'ensemble des casinos belges. C'est alors que j'ai décidé de prendre une année dabatique et de rejoindre ma femme en <strong> Russie, à Saint-Pétersbourg</strong>, pour y apprendre le russe. Finalement je suis resté 3 ans, car je travaillais en tant que professeur de français et comme traducteur d'article du russe au français. Dans le même temps, je me suis remis à la programmation, dont je n'avais plus eu trop de temps à y consacrer faute de temps. J'ai suivi la formation <strong> développeur web d'openclassrooms </strong> dont j'ai récemment obtenu le <strong> RNCP (bac+2) </strong>.</p>
+            
           </div>
 
-            <div class="container4">
+            <div id="meContacter" class="container4">
                <h2 class="">Me contacter</h2>
-               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque, dolorem sapiente voluptate expedita quisquam perferendis? Reprehenderit nemo omnis rerum amet ducimus explicabo. Repudiandae labore quos mollitia doloribus earum. Nihil, maiores!</p>
+               <p>e-mail : <strong>vinceny@live.fr</strong></p>
+               <p>Gsm : <strong>06 16 85 35 16</strong></p>
+               <!-- <p>Gsm : <strong>+33 6 16 85 35 16</strong></p> -->
           </div>
 
 
@@ -722,14 +751,32 @@ changeBodyBg(value){
   background:black;
    transform: translate(0px, -100px);
  
+ 
 }
 .vignetteTexte{
-   transform: translate(0px, -235px);
+   transform: translate(0px, -220px);
    text-decoration: unset;
    color: white;
    padding-top: 2px;
    padding-bottom: 2px;
+  
    
+}
+.vignetteTexte .sousTitreVignette{
+  
+   margin-top: -17px;
+   
+}
+
+.vignetteTexte .cliquez{
+   width: 250px;
+   height: 17px;
+  margin-left: auto;
+  margin-right: auto;
+   background-color: white;
+  font-size: 15px;
+  font-style:italic;
+  color: black;
 }
 .nofill{
 text-decoration: unset;
@@ -1333,8 +1380,17 @@ nav li{
   }
 }
 .reverse{
+    backface-visibility: hidden;
+   /* vertical-align: middle; */
   transform: rotateX(180deg) rotateY(180deg);
+ 
 }
+/* .reverse2{
+    backface-visibility: hidden;
+  transform: rotateX(0deg) rotateY(0deg);
+ 
+} */
+
 .boxX{
   /* width: 20vw;
   height: 12.36vw; */
@@ -1380,11 +1436,11 @@ nav li{
   
 } */
 .back{
-  
+ 
   
    /* width: 100vw;
    height: 8vw; */
-    margin-left: -950px;
+    /* margin-left: -950px; */
     /* border-right:1vw solid black;  */
    
 
@@ -1547,8 +1603,9 @@ nav li{
     width: 100%;
   }
 } */
-.title_container{
-  
+.title_containerBack{
+ width: 100%;
+ height: 8.25rem;
   /* position: relative; */
   /* padding-right: 10vw; */
  /* text-align: right;  */
@@ -1563,6 +1620,9 @@ nav li{
    animation-duration: 0.25s;
   animation-timing-function: ease-in-out; 
   animation-name: border-bannierTB; */
+}
+.title_containerBack{
+ /* text-align: left; */
 }
   
 
@@ -1904,13 +1964,35 @@ transform: rotateX(180deg);
    transform: translate(0px, -80px);
 }
 .vignetteTexte{
-   transform: translate(0px, -235px);
+   transform: translate(0px, -177px);
    text-decoration: unset;
    color: white;
    padding-top: 2px;
    padding-bottom: 2px;
    
+
 }
+.vignetteTexte .sousTitreVignette{
+    margin-top: -20px;
+   font-size: 15px;
+   
+}
+
+.vignetteTexte .cliquez{
+    margin-top: -5px;
+    /* margin-left: 190px; */
+     height: 15px;
+      font-size: 13px;
+      
+   /* width: 250px;
+   height: 17px;
+   margin-left: 350px;
+   background-color: white;
+  font-size: 15px;
+  font-style:italic;
+  color: black; */
+}
+
 
 .boxX{
   width: 12.36vw;
@@ -2200,13 +2282,37 @@ transform: rotateX(180deg);
   background:black;
    transform: translate(0px, -60px);
 }
+
 .vignetteTexte{
-   transform: translate(0px, -235px);
+   transform: translate(0px, -140px);
    text-decoration: unset;
    color: white;
    padding-top: 2px;
    padding-bottom: 2px;
+  
    
+}
+.vignetteTexte h2{
+  font-size: 22px;
+}
+.vignetteTexte .sousTitreVignette{
+  
+  /* display: none; */
+ font-size: 13px;
+ margin-top: -22px;
+   
+}
+
+.vignetteTexte .cliquez{
+   width: 250px;
+   height: 15px;
+   margin-top: -11px;
+  margin-left: auto;
+  margin-right: auto;
+   background-color: white;
+  font-size: 13px;
+  font-style:italic;
+  color: black;
 }
  
   /* .container{
@@ -2704,16 +2810,38 @@ display: none;
    transform: translate(0px, -11vw);
 }
 .vignetteTexte{
-   transform: translate(0px, -23.75vw);
+   transform: translate(0px, -26vw);
    text-decoration: unset;
    color: white;
    padding-top: 2px;
    padding-bottom: 2px;
    
 }
-.vignetteTexte p{
-  display: none;
+.vignetteTexte h2{
+  font-size: 4.25vw;
 }
+.vignetteTexte .sousTitreVignette{
+  
+  /* display: none; */
+ font-size: 2.35vw;
+ /* margin-top: -22px; */
+   
+}
+
+.vignetteTexte .cliquez{
+   width: 45vw;
+   height: 2.7vw;
+   margin-top: -1.90vw;
+  margin-left: auto;
+  margin-right: auto;
+   background-color: white;
+  font-size: 2.25vw;
+  font-style:italic;
+  color: black;
+}
+/* .vignetteTexte p{
+  display: none;
+} */
 .navbar1 .nav-link:hover{
   padding-top: 2vw;
 }
@@ -2744,6 +2872,17 @@ display: none;
   overflow: hidden;
   justify-content: space-around;
  }
+}
+
+@media screen and (max-width: 499px)
+
+{
+  .vignetteTexte h2{
+    margin-top: 6vw;
+  }
+  .vignetteTexte p{
+    display: none;
+  }
 }
     /* .container{
   display: grid;
