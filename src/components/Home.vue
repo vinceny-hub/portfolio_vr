@@ -143,7 +143,7 @@
 
 
 
-             <!-- <div  active-click=""    v-on:click="buttonClick()" id="bannier" class="box-1" horizontal=true>
+             <div  active-click=""    v-on:click="buttonClick()" id="bannier" class="box-1" horizontal=true>
         
             <div class="front"> 
            
@@ -155,10 +155,10 @@
       
              </div> 
           </div>         
-        </div> -->
+        </div>
 
         
-             <vue-flip  active-click=""  v-model="flipped"  v-on:click="buttonClick()" id="bannier" class="box-1" horizontal=true>
+             <!-- <vue-flip  active-click=""  v-model="flipped"  v-on:click="buttonClick()" id="bannier" class="box-1" horizontal=true>
           <template v-slot:front class="front">
         
          <div class="title_container"> 
@@ -175,16 +175,16 @@
        
                 <div class="title_containerBack reverse"> 
               <div class="title_box "> 
-                <!-- <div class="reverse"> -->
+             
               <h1 class="title_name" id="titleNameFront">Vincent Robert</h1>
               <h2 class="sousTitre" id="sousTitreFront">Développeur Web</h2>
-                <!-- </div> -->
+              
               </div>
        
              </div> 
-             <!-- </div>  -->
+           
           </template>
-             </vue-flip>
+             </vue-flip> -->
 
 
           <!-- <div v-on:click="buttonClick()" v-bind="flipped" id="bannier" class="box-1" horizontal="true">  -->
@@ -240,57 +240,57 @@
        <h2 class="mondrianTheme"> Choose your Mondrian theme </h2>
         <div class="containerBox">
           
-           <div   v-on:click="animate(), changeBodyBg(0)"  class="colorBox colorBox0" horizontal=true>
+           <div   v-on:click="animate(), changeBodyBg(0)"  class="colorBox colorBox0 boxes" horizontal=true>
             <div class="frontBRY">            
               <div class="miniBoxFront"> 
-                <div class="miniLittleBoxBRY"></div>
-                <div class="miniBannierBRY"></div>
-                <div class="miniSideBRY"></div>
+                <div class="miniLittleBoxBRY miniside0"  ></div>
+                <div class="miniBannierBRY minibannier0"  ></div>
+                <div class="miniSideBRY miniMiniBox0" ></div>
               </div>           
             </div>                    
            </div>
-            <div   v-on:click="animate(), changeBodyBg(1)"  class="colorBox colorBox0" horizontal=true>
+            <div   v-on:click="animate(), changeBodyBg(1)" id="miniAnim1" class="colorBox colorBox0 boxes" horizontal=true>
             <div class="frontBRY">            
               <div class="miniBoxFront"> 
-                 <div class="miniLittleBoxYBR"></div>
-                <div class="miniBannierYBR"></div>
-                <div class="miniSideYBR"></div>
+                 <div class="miniLittleBoxYBR miniside1"  id="miniSideAnim1"></div>
+                <div class="miniBannierYBR  minibannier1"  id="miniBanAnim1"></div>
+                <div class="miniSideYBR miniMiniBox1" id="miniBoxAnim1"></div>
               </div>           
             </div>                    
            </div>   
-           <div   v-on:click="animate(), changeBodyBg(2)"  class="colorBox colorBox0" horizontal=true>
+           <div   v-on:click="animate(), changeBodyBg(2)" id="miniAnim2" class="colorBox colorBox0 boxes" horizontal=true>
             <div class="frontBRY">            
               <div class="miniBoxFront"> 
-                <div class="miniLittleBoxRYB"></div>
-                <div class="miniBannierRYB"></div>
-                <div class="miniSideRYB"></div>
+                <div class="miniLittleBoxRYB miniside2"  id="miniSideAnim2"></div>
+                <div class="miniBannierRYB minibannier2" id="miniBanAnim2"></div>
+                <div class="miniSideRYB miniMiniBox2" id="miniBoxAnim2"></div>
               </div>           
             </div>                    
            </div>   
-           <div   v-on:click="animate(), changeBodyBg(3)"  class="colorBox colorBox0" horizontal=true>
+           <div   v-on:click="animate(), changeBodyBg(3)" id="miniAnim3" class="colorBox colorBox0 boxes" horizontal=true>
             <div class="frontBRY">            
               <div class="miniBoxFront"> 
-                <div class="miniLittleBoxBYR"></div>
-                <div class="miniBannierBYR"></div>
-                <div class="miniSideBYR"></div>
+                <div class="miniLittleBoxBYR miniside3"  id="miniBanAnim3"></div>
+                <div class="miniBannierBYR minibannier3"  id="miniBanAnim3"></div>
+                <div class="miniSideBYR miniMiniBox3" id="miniBoxAnim3"></div>
               </div>           
             </div>                    
            </div>   
-           <div   v-on:click="animate(), changeBodyBg(4)"  class="colorBox colorBox0" horizontal=true>
+           <div   v-on:click="animate(), changeBodyBg(4)" id="miniAnim4" class="colorBox colorBox0 boxes" horizontal=true>
             <div class="frontBRY">            
               <div class="miniBoxFront"> 
-                <div class="miniLittleBoxYRB"></div>
-                <div class="miniBannierYRB"></div>
-                <div class="miniSideYRB"></div>
+                <div class="miniLittleBoxYRB miniside4"   id="miniSideAnim4"></div>
+                <div class="miniBannierYRB minibannier4"  id="miniBanAnim4"></div>
+                <div class="miniSideYRB miniMiniBox4" id="miniBoxAnim4"></div>
               </div>           
             </div>                    
            </div>
-            <div   v-on:click="animate(), changeBodyBg(5)"  class="colorBox colorBox0" horizontal=true>
+            <div   v-on:click="animate(), changeBodyBg(5)" class="colorBox colorBox0 boxes" horizontal=true>
             <div class="frontBRY">            
               <div class="miniBoxFront"> 
-                 <div class="miniLittleBoxRBY"></div>
-                <div class="miniBannierRBY"></div>
-                <div class="miniSideRBY"></div>
+                 <div class="miniLittleBoxRBY miniside5" ></div>
+                <div class="miniBannierRBY minibannier5" ></div>
+                <div class="miniSideRBY miniMiniBox5" ></div>
               </div>           
             </div>                    
            </div>
@@ -423,7 +423,12 @@
 
           <div class="container3">
                <h2 id="monParcours" class="">Mon Parcours</h2>
-               <p>Électronicien de formation, et après avoir étudié la physique et les mathématiques à l'université, et ayant voulu avoir une expérience à l'étranger, je me suis retrouvé technicien en électronique dans le Grand Casino de Knokke, en  Belgique Flamande. De là j'ai évolué pour devenir <strong> reponsable technique </strong> du parc machine à sous, et responsable de salle, chargé de l'accueil et de la fidélisation de la clientèle. Puis après cette expérience réussi, j'ai intégré l'entreprise <strong> DRGT online</strong>, toujours en <strong> Belgique</strong>, dans laquelle je travaillais en tant que <strong> slot enginner </strong> pour l'ensemble des casinos belges. C'est alors que j'ai décidé de prendre une année dabatique et de rejoindre ma femme en <strong> Russie, à Saint-Pétersbourg</strong>, pour y apprendre le russe. Finalement je suis resté 3 ans, car je travaillais en tant que professeur de français et comme traducteur d'article du russe au français. Dans le même temps, je me suis remis à la programmation, dont je n'avais plus eu trop de temps à y consacrer faute de temps. J'ai suivi la formation <strong> développeur web d'openclassrooms </strong> dont j'ai récemment obtenu le <strong> RNCP (bac+2) </strong>.</p>
+               <p class="pitch">Électronicien de formation, mais ayant étudié la physique et les mathématiques à l'université, je suis devenu technicien en électronique au Grand Casino de Knokke, en Belgique flamande, afin d'acquérir une expérience à l'étranger. Par la suite, j'ai évolué en tant que <strong>responsable technique</strong> du parc machine à sous, tout en étant responsable de salle et chargé de l'accueil et de la fidélisation de la clientèle. 
+               Après cette expérience réussie, j'ai intégré l'entreprise <strong>DRGT Online</strong>, toujours en <strong>Belgique</strong>, dans laquelle je travaillais en tant que <strong> slot enginner</strong>. Mon rôle consistais à installer, configurer, programmer et réparer les équipements, les
+                produits techniques et informatiques de l'ensemble des casinos belges.
+
+               J'ai alors décidé de rejoindre mon épouse en <strong> 
+                 Russie, à Saint-Pétersbourg</strong>, où j'ai appris le russe. Durant trois ans, j'y ai travaillé en tant que professeur de français et comme traducteur d'article du russe au français. Dans le même temps, j'ai suivi la formation <strong> développeur web d'openclassroom </strong> dont j'ai récemment obtenu le <strong> RNCP (bac+2)</strong>.</p>
             
           </div>
 
@@ -504,6 +509,9 @@ export default {
 
 animate(){
 
+ 
+
+
     var elTitmeName = document.getElementById('titleNameFront');
   elTitmeName.style.animation = 'none';
   elTitmeName.offsetHeight; /* trigger reflow */
@@ -549,6 +557,32 @@ animate(){
   ellittleBoxLateral.style.animation = 'none';
   ellittleBoxLateral.offsetHeight; /* trigger reflow */
   ellittleBoxLateral.style.animation = null; 
+
+
+  //  var elMiniAnimate0 = document.getElementById('miniBanAnim0');
+  // elMiniAnimate0.style.animation = 'none';
+  // elMiniAnimate0.offsetHeight; /* trigger reflow */
+  // elMiniAnimate0.style.animation = null;
+  //  var elMiniAnimate1 = document.getElementById('miniBanAnim1');
+  // elMiniAnimate1.style.animation = 'none';
+  // elMiniAnimate1.offsetHeight; /* trigger reflow */
+  // elMiniAnimate1.style.animation = null;
+  //  var elMiniAnimate2 = document.getElementById('miniBanAnim2');
+  // elMiniAnimate2.style.animation = 'none';
+  // elMiniAnimate2.offsetHeight; /* trigger reflow */
+  // elMiniAnimate2.style.animation = null;
+  //  var elMiniAnimate3 = document.getElementById('miniBanAnim3');
+  // elMiniAnimate3.style.animation = 'none';
+  // elMiniAnimate3.offsetHeight; /* trigger reflow */
+  // elMiniAnimate3.style.animation = null;
+  //  var elMiniAnimate4 = document.getElementById('miniBanAnim4');
+  // elMiniAnimate4.style.animation = 'none';
+  // elMiniAnimate4.offsetHeight; /* trigger reflow */
+  // elMiniAnimate4.style.animation = null;
+  //  var elMiniAnimate5 = document.getElementById('miniBanAnim5');
+  // elMiniAnimate5.style.animation = 'none';
+  // elMiniAnimate5.offsetHeight; /* trigger reflow */
+  // elMiniAnimate5.style.animation = null;
   
 
 },
@@ -719,6 +753,9 @@ changeBodyBg(value){
 
 
 <style scoped>
+
+
+
 /* html, body {
   margin: 0px !important;
   padding: 0px !important;
@@ -743,6 +780,51 @@ changeBodyBg(value){
   height: 3vw;
   background-color: red;
 } */
+/* .container3{
+  width: 100%;
+  justify-content: space-around;
+} */
+.boxes{
+ transition: 300ms ease-out;
+  z-index: 0;
+}
+ .boxes:hover{
+   transform: scale(1.045);
+   box-shadow: 5px 5px 5px;
+   /* animation-fill-mode: forwards; */
+    /* animation-duration: 0.175s; */
+  /* animation-timing-function: ease-out;  */
+/* animation-name: scaleBoxes; */
+
+}
+
+/* @keyframes scaleBoxes {
+  from {
+  
+   transform: scale(1);
+   
+  }
+ 
+  100% {
+   
+    transform: scale(1.035);
+    box-shadow: 5px 5px 5px;
+    
+  
+  } */
+  /* 100%{
+    transform: scale(1);
+  } */
+/* } */
+
+
+.pitch{
+  margin-left: auto;
+  margin-right: auto;
+  width: 98%;
+  justify-items: space-around;
+  text-align: left;
+}
 
 .vignette{
   width: 100%;
@@ -754,7 +836,7 @@ changeBodyBg(value){
  
 }
 .vignetteTexte{
-   transform: translate(0px, -220px);
+   transform: translate(0px, -235px);
    text-decoration: unset;
    color: white;
    padding-top: 2px;
@@ -997,17 +1079,6 @@ text-decoration: unset;
   
 }
 
-.colorBox{
-  /* width: 90px;
-  height: 90px; */
-  /* border: solid 3px black; */
- 
-  /* margin-left: 3vw;
-  margin-right: 3vw; */
-  /* -webkit-animation:slideRL; */
- 
-  
-}
 
 .miniBoxFront{
     border: solid 3px black;
@@ -1262,6 +1333,152 @@ background-color:red;
   justify-content: center;
  }
 
+  .miniside0{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideRL;
+
+  }
+  .minibannier0{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideLR;
+
+  }
+  .miniMiniBox0{
+  
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideBT;
+
+  }
+
+  .miniside1{
+ 
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideRL;
+
+  }
+  .minibannier1{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideLR;
+
+  }
+  .miniMiniBox1{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideBT;
+
+  }
+   .miniside2{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideRL;
+
+  }
+  .minibannier2{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideLR;
+
+  }
+  .miniMiniBox2{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideBT;
+
+  }
+   .miniside3{
+  
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideRL;
+
+  }
+  .minibannier3{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideLR;
+
+  }
+  .miniMiniBox3{
+    
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideBT;
+
+  }
+   .miniside4{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideRL;
+
+  }
+  .minibannier4{
+    
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideLR;
+
+  }
+  .miniMiniBox4{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideBT;
+
+  }
+   .miniside5{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideRL;
+
+  }
+  .minibannier5{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideLR;
+
+  }
+  .miniMiniBox5{
+   
+     animation-duration: 3.2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; 
+  animation-name: slideBT;
+
+  }
+
 .box-2{
   z-index: 2;
   align-content: center;
@@ -1275,10 +1492,14 @@ background-color:red;
   animation-fill-mode: forwards; 
   animation-name: slideBT;
 }
+/* .boxes{
+
+} */
+
 .i2{
- position: relative;
+ /* position: relative;
   width: 18vw;
-  height: 100vw;
+  height: 100vw; */
   /* background-color: red; */
 }
 .i1{
@@ -1314,10 +1535,7 @@ background-color:red;
   text-align: right;
 
 }
-/* .boxLateralRight{
-  grid-column: 3/4;
-  grid-row: 3/4;
-} */
+
 
  /* .window-1{
    
@@ -1383,6 +1601,7 @@ nav li{
     backface-visibility: hidden;
    /* vertical-align: middle; */
   transform: rotateX(180deg) rotateY(180deg);
+  margin-top: 0.5vw;
  
 }
 /* .reverse2{
@@ -1394,6 +1613,7 @@ nav li{
 .boxX{
   /* width: 20vw;
   height: 12.36vw; */
+  z-index: 5;
    width: 300px;
   height: 185.41px;
   border: solid 1.05vw black;
@@ -1509,9 +1729,25 @@ nav li{
   height: 100%;
   width: 100%; 
   overflow: hidden;
+   /* transition: 300ms ease-out;
+   box-shadow:0.5vw 0.5vw 0.25vw grey; */
+
   
-  /* font-size: 1.25vw; */
+  
 } 
+/* .window:hover{ */
+   /* transform: scale(1.045); */
+    /* box-shadow: 1vw 1vw 0.5vw grey;
+    border: 0.1vw solid black;
+   
+
+}
+.window:hover .vignetteTexte{
+  margin-top: -10px;
+   
+
+} */
+
 .window p{
   /* margin-top: 3.25vw; */
   /* font-size: 5vw; */
@@ -1545,8 +1781,9 @@ nav li{
 .window{
 /* font-size: 9vw; */
  /* perspective: 200px; */
- box-sizing: border-box;
- border: solid 1.05vw black;
+ /* box-sizing: border-box; */
+ /* border: solid 1.05vw black; */
+  border: solid 0.1vw black;
 
  /* box-shadow: 1vw 1vw 1vw black; */
  border-radius: 0.1vw;
@@ -1604,8 +1841,9 @@ nav li{
   }
 } */
 .title_containerBack{
- width: 100%;
- height: 8.25rem;
+ /* width: 100%; */
+ /* height:160px; */
+ /* margin-top:-30px */
   /* position: relative; */
   /* padding-right: 10vw; */
  /* text-align: right;  */
@@ -1621,9 +1859,11 @@ nav li{
   animation-timing-function: ease-in-out; 
   animation-name: border-bannierTB; */
 }
-.title_containerBack{
- /* text-align: left; */
-}
+/* .title_containerBack{
+height: 3vw;
+margin-top: auto;
+margin-bottom: auto;
+} */
   
 
 
@@ -1841,7 +2081,9 @@ transform: rotateX(180deg);
 
 
 @media screen and (max-width: 1299px){
-
+/* .boxLateralRight{
+ display: none;
+} */
 
    .container2{
   /* margin-top: 45px;
@@ -1964,7 +2206,7 @@ transform: rotateX(180deg);
    transform: translate(0px, -80px);
 }
 .vignetteTexte{
-   transform: translate(0px, -177px);
+   transform: translate(0px, -187px);
    text-decoration: unset;
    color: white;
    padding-top: 2px;
@@ -2193,7 +2435,8 @@ transform: rotateX(180deg);
     margin-right: auto;
   } */
 
-  .box-1{
+  /* .box-1{
+     box-sizing: border-box;
   border: 1.05vw solid black;
   border-left: unset;
   border-right: unset;
@@ -2205,7 +2448,7 @@ transform: rotateX(180deg);
   animation-timing-function: ease-out; 
   animation-name: slideRL; 
 
-}
+} */
 @keyframes slideRL {
   from {
     margin-left: 100vw;
@@ -2284,7 +2527,7 @@ transform: rotateX(180deg);
 }
 
 .vignetteTexte{
-   transform: translate(0px, -140px);
+   transform: translate(0px, -146px);
    text-decoration: unset;
    color: white;
    padding-top: 2px;
@@ -2661,6 +2904,65 @@ transform: rotateX(180deg);
     margin-left: 5vw;
   }
 }
+@media (min-width: 598px)  {
+ .nofill{
+    transition: 300ms ease-out;
+ }
+  .nofill:hover{
+     -webkit-transform: scale(1.05);
+      transform: scale(1.05);
+  }
+
+  .window{
+  /* margin-top: 15vw;  */
+  /* height: 391.84px;  */
+  display: inline-block;
+  height: 100%;
+  width: 100%; 
+  overflow: hidden;
+   transition: 300ms ease-out;
+   box-shadow:0.75vw 0.75vw 0.5vw gray;
+   transform: scale(1);
+
+  
+  
+} 
+.window:hover{
+   /* transform: scale(1.045); */
+    box-shadow: 1.25vw 1.25vw 1vw grey;
+    /* border-color:gold; */
+    border: solid 1px black;
+     -webkit-transform: scale(2);
+    transform: scale(2);
+   
+
+}
+.vignette{
+   transition: 300ms ease-out;
+  /* margin-top: 100px; */
+}
+.vignetteTexte{
+   transition: 300ms ease-out;
+     /* transform: translate(0,-230px); */
+  
+}
+.window:hover .vignette{
+  /* margin-top: px; */
+  /* transform: translate(0,-33%);
+  height: 100%; */
+  
+   
+
+}
+.window:hover .vignetteTexte{
+    /* transform: translate(0,-400px); */
+   
+
+}
+  .boxLateralRight{
+    display: none;
+  }
+ }
 @media screen and (max-width: 597px)
 
 {
@@ -2735,12 +3037,12 @@ display: none;
     margin-top: -11vw;
  }
 /* } */
-.box-1{
+/* .box-1{
    border: 1vw solid black;
   border-left: unset;
   border-right: unset;
   
-}
+} */
 .box-2{
    /* border: 2vw solid black; */
   /* border-left: unset;
@@ -2810,7 +3112,7 @@ display: none;
    transform: translate(0px, -11vw);
 }
 .vignetteTexte{
-   transform: translate(0px, -26vw);
+   transform: translate(0px, -27vw);
    text-decoration: unset;
    color: white;
    padding-top: 2px;
